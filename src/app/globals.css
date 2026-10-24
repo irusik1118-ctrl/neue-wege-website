@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-purple: #4B176B;
+  --color-brand-purple-deep: #321044;
+  --color-brand-purple-light: #6A2B91;
+  --color-brand-gold: #C8A04A;
+  --color-brand-gold-light: #E4CC83;
+  --color-brand-gold-dark: #A27B2B;
+  --color-brand-navy: #1B2A4A;
+  --color-brand-ink: #17151A;
+  --color-brand-muted: #625D66;
+  --color-brand-surface: #F7F5F8;
+  --color-brand-border: #E5E0E8;
+}
+
+:root {
+  --primary: #4B176B;
+  --primary-deep: #321044;
+  --gold: #C8A04A;
+  --gold-light: #E4CC83;
+  --ink: #17151A;
+  --muted: #625D66;
+  --surface: #F7F5F8;
+}
+
+body {
+  color: var(--ink);
+  background-color: #FFFFFF;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gold decorative gradient text and borders */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C8A04A 0%, #F5E1A4 50%, #C8A04A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C8A04A 0%, #DFC074 50%, #B88E36 100%);
+}
+
+.purple-gradient-bg {
+  background: linear-gradient(135deg, #321044 0%, #4B176B 60%, #5E1F84 100%);
+}
+
+.wave-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #4B176B 0%, #C8A04A 50%, #17151A 100%);
+}
