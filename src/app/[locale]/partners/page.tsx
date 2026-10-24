@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Handshake, Globe, ShieldCheck, ArrowRight, Building, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -58,7 +58,7 @@ export default async function PartnersPage({
                     {partner.type[typedLocale]}
                   </span>
                   <span className="text-xs text-brand-muted">•</span>
-                  <span className="text-xs text-brand-muted font-medium">{partner.location}</span>
+                  <span className="text-xs text-brand-muted font-medium">{partner.location[typedLocale]}</span>
                   {partner.regNumber && (
                     <>
                       <span className="text-xs text-brand-muted">•</span>
@@ -77,7 +77,7 @@ export default async function PartnersPage({
 
                 <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-brand-navy">
                   <ShieldCheck className="w-4 h-4 text-brand-gold" />
-                  <span>Офіційне узгодження співпраці та спільні ініціативи</span>
+                  <span>{dict.partners.officialCoordination}</span>
                 </div>
               </div>
 
@@ -101,7 +101,7 @@ export default async function PartnersPage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-brand-surface rounded-3xl border border-brand-gold/60 p-8 sm:p-14 text-center space-y-6">
           <SectionHeading
-            badge="Нові горизонти"
+            badge={dict.partners.becomePartnerBadge}
             title={dict.partners.becomePartnerHeading}
             subtitle={dict.partners.becomePartnerText}
           />
@@ -109,25 +109,25 @@ export default async function PartnersPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-left pt-2 pb-6">
             <div className="bg-white p-6 rounded-2xl border border-brand-border space-y-2">
               <CheckCircle2 className="w-5 h-5 text-brand-gold" />
-              <h4 className="text-sm font-bold text-brand-navy">Аграрним господарствам</h4>
+              <h4 className="text-sm font-bold text-brand-navy">{dict.partners.targetFarmsTitle}</h4>
               <p className="text-xs text-brand-muted">
-                Прямий вихід на європейських покупців, виставкова презентація, підготовка аналітичних звітів.
+                {dict.partners.targetFarmsDesc}
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-2xl border border-brand-border space-y-2">
               <CheckCircle2 className="w-5 h-5 text-brand-gold" />
-              <h4 className="text-sm font-bold text-brand-navy">Європейським імпортерам</h4>
+              <h4 className="text-sm font-bold text-brand-navy">{dict.partners.targetImportersTitle}</h4>
               <p className="text-xs text-brand-muted">
-                Надійний пошук перевірених постачальників зерна, насіння, овочів, ягід та продукції переробки.
+                {dict.partners.targetImportersDesc}
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-2xl border border-brand-border space-y-2">
               <CheckCircle2 className="w-5 h-5 text-brand-gold" />
-              <h4 className="text-sm font-bold text-brand-navy">Виробникам техніки</h4>
+              <h4 className="text-sm font-bold text-brand-navy">{dict.partners.targetMakersTitle}</h4>
               <p className="text-xs text-brand-muted">
-                Просування інноваційних агротехнологій, біопрепаратів та обладнання для агросектору.
+                {dict.partners.targetMakersDesc}
               </p>
             </div>
           </div>

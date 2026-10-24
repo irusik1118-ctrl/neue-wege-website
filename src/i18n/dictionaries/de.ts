@@ -24,6 +24,10 @@ export const de: Dictionary = {
     writeMessenger: 'In Messenger schreiben',
     confirmed: 'Bestätigt',
     pendingApproval: 'Vorläufig / In Abstimmung',
+    allPublications: 'Alle Artikel',
+    discussTerms: 'Konditionen anfragen',
+    customAgreement: 'Nach Vereinbarung',
+    messengers: 'Messenger',
   },
   home: {
     heroBadge: 'Internationale Agrarkooperation • Wien & Ukraine',
@@ -32,26 +36,46 @@ export const de: Dictionary = {
       'Neue Wege GmbH verbindet fundierte Traditionen des Agrarsektors mit modernsten Technologien der Produktion, Zucht und Erzeugerverarbeitung. Wir öffnen europäischen Märkten den Weg zu ukrainischen Agrarbetrieben.',
     ctaServices: 'Leistungen & Pakete ansehen',
     ctaContact: 'Direktkontakt aufnehmen',
+    statAgriDirections: 'Agrar-Schwerpunkte',
+    statExhibitionDate: 'Gent, Belgien 2027',
+    statNoTravel: 'Ohne eigene Anreise',
+    repBadge: 'Wien, Österreich • Vertretung in der Ukraine',
+    repTrustBadge: 'Offizielle Dienstleistungen & direkter Zugang zum EU-Markt',
+    activitiesBadge: 'Ganzheitlicher Ansatz',
     activitiesHeading: 'Unsere Tätigkeitsfelder',
     activitiesSubheading:
       'Fünf strategische Kernbereiche von der Tier- und Pflanzenzucht bis zum internationalen Großhandel.',
+    customRepBadge: 'Individuelle Betreuung',
+    customRepTitle: 'Individuelle Vertretung gewünscht?',
+    customRepDesc:
+      'Wir stimmen maßgeschneiderte Teilnahmebedingungen und die Präsentation Ihrer Agrarprojekte vor europäischen Partnern ab.',
     exhibitionHeading: 'Internationale Agrarmesse in Gent, Belgien',
     exhibitionSubheading:
       'Exklusives Repräsentanzangebot für ukrainische Agrarbetriebe: 14. – 17. Januar 2027.',
+    exhibitionSupporterText:
+      'Mit Unterstützung der gemeinnützigen Organisation „Hoffnung & Würde“ präsentieren wir Ihre Erzeugnisse und Stärken vor über 70.000 europäischen Fachbesuchern.',
     exhibitionBadge: 'Messe-Highlight 2027',
     exhibitionCta: 'Mehr zur Messepräsenz',
+    exhibitionStats: '70.000+ Fachbesucher • 50.000 m²',
+    supportedByTitle: 'Unterstützt durch die Organisation',
+    supportedByOrg: '„Hoffnung & Würde“ (Wien)',
+    packagesBadge: 'Paketangebote',
     servicesHeading: 'Pakete & Einzelleistungen',
     servicesSubheading:
       'Transparente Konditionen für professionelle Werbe- und Informationspräsenz in Europa.',
+    viewAllServicesLink: 'Gesamten Katalog der Einzelleistungen ansehen (ab 100 €)',
+    partnersBadge: 'Verlässliche Kooperation',
     partnersHeading: 'Vertrauensvolle Partnerschaften',
     partnersSubheading:
       'Zusammenarbeit mit gemeinnützigen Organisationen, europäischen Verbänden und Handelspartnern.',
+    articlesBadge: 'Wissensdatenbank',
     articlesHeading: 'Fachartikel & Marktanalysen',
     articlesSubheading:
       'Praxisnahes Fachwissen für Agrarunternehmen auf dem Weg in den EU-Binnenmarkt.',
     ctaBannerTitle: 'Bereit für den nächsten Schritt in den europäischen Markt?',
     ctaBannerSubtitle:
-      'Sprechen Sie unverbindlich mit unseren deutsch- und ukrainischsprachigen Fachberatern in Wien und Kiew.',
+      'Sprechen Sie unverbindlich mit unseren deutsch- und ukrainischsprachigen Fachberatern in Wien und der Ukraine.',
+    callPrefix: 'Anrufen:',
   },
   about: {
     badge: 'Unternehmensprofil',
@@ -66,23 +90,45 @@ export const de: Dictionary = {
     visionHeading: 'Unser Ziel',
     visionText:
       'Hochwertige Erzeugnisse zu schaffen, natürliche Boden- und Naturressourcen rational zu schonen und ein verlässliches Fundament für langfristiges, stabiles Unternehmenswachstum und bilaterale Partnerschaften aufzubauen.',
+    fiveDirectionsBadge: 'Spezialisierung',
     fiveDirectionsHeading: 'Die fünf Säulen unseres Unternehmens',
+    fiveDirectionsSubtitle:
+      'Umfassende Struktur der Unternehmensbereiche nach höchsten agrarwirtschaftlichen Standards.',
     europeanMarketHeading: 'Brücke zwischen der Ukraine und Europa',
     europeanMarketText:
       'Gerade in herausfordernden Zeiten setzen wir auf verlässliche Partnerschaften. Mit Sitz in Wien und tiefen Wurzeln im ukrainischen Agrarsektor unterstützen wir Landwirtschaftsbetriebe dabei, ihre Produkte und Leistungen auf führenden europäischen Plattformen wirkungsvoll zu präsentieren.',
+    cardHqVienna: 'Hauptsitz in Wien, Republik Österreich',
+    cardOfficeUkraine: 'Operative Vertretung in der Ukraine',
+    cardMultilingual: 'Mehrsprachige Fachberater (DE / UK / EN)',
+    ctaHeading: 'Möchten Sie mit Neue Wege GmbH zusammenarbeiten?',
+    ctaText:
+      'Wir sind offen für den Dialog mit Landwirtschaftsbetrieben, Landwirten, Lieferanten und Handelsketten.',
   },
   services: {
     badge: 'Transparente Preisgestaltung',
     title: 'Dienstleistungen, Preise und Kooperationspakete',
     subtitle:
       'Alle Einzelleistungen und maßgeschneiderten Pakete zur professionellen Vertretung Ihres Betriebs auf dem europäischen Markt.',
-    singleServicesHeading: 'Katalog der Einzelleistungen',
-    singleServicesSubheading:
-      'Wählen Sie genau die Werbe- und Kontaktformate, die optimal zu Ihren Zielen passen.',
+    packagesBadge: 'Komplettlösungen',
     packagesHeading: 'Kooperationspakete im Überblick',
     packagesSubheading:
       'Vom flexiblen modularen Einstieg bis zur vollumfänglichen B2B-Präsenz.',
+    singleServicesBadge: 'Preisliste',
+    singleServicesHeading: 'Katalog der Einzelleistungen',
+    singleServicesSubheading:
+      'Wählen Sie genau die Werbe- und Kontaktformate, die optimal zu Ihren Zielen passen.',
+    tableBadge: 'Preisvergleich',
+    tableHeading: 'Standardpreis vs. Zusatzleistungen im Economy-Paket (+30%)',
+    tableSubtitle: 'Gemäß offiziellem Angebot und Preiskonditionen.',
+    thService: 'Dienstleistung',
+    thStandardPrice: 'Standardpreis',
+    thEconomyExtra: 'Zusatzpreis (+30%)',
+    thIncludedInPlatinum: 'Im Platin-Paket',
+    yes: 'Ja',
+    termsBadge: 'Rahmenbedingungen',
     termsHeading: 'Wichtige Rahmenbedingungen',
+    termsSubtitle: 'Offizielle Zahlungsmodalitäten und Bereitstellung von Materialien',
+    questionPrompt: 'Haben Sie Fragen oder möchten Sie ein individuelles Angebot erhalten?',
   },
   events: {
     badge: 'Messe-Projekt 2027',
@@ -93,13 +139,59 @@ export const de: Dictionary = {
     dateLabel: 'Termin',
     locationLabel: 'Veranstaltungsort',
     visitorsLabel: 'Fachbesucher',
+    visitorsValue: 'Ca. 70.000 Fachbesucher',
     areaLabel: 'Ausstellungsfläche',
+    areaValue: '50.000 m² Ausstellungsfläche',
+    conceptBadge: 'Teilnahmekonzept',
     conceptHeading: 'Wir vertreten Ihre Interessen in Europa – ohne Reiseaufwand',
     conceptText:
       'Wir verstehen die betrieblichen und zeitlichen Herausforderungen ukrainischer Agrarier. Neue Wege GmbH bietet Ihnen die professionelle Vertretung Ihres Betriebs durch erfahrene, mehrsprachige Manager direkt im Ausstellungspavillon.',
+    conceptCallout:
+      'Sie müssen keine weiten Reisen antreten, hohe Reise- und Visakosten aufwenden und Ihren Betrieb nicht unbeaufsichtigt lassen. Unser Team übernimmt die gesamte Organisation vor Ort.',
+    viewPackagesBtn: 'Paketangebote ansehen',
+    supporterHeading: 'Mit Unterstützung der Organisation „Hoffnung & Würde“',
+    supporterSubtitle: 'Wien, Österreich • ZVR 1984068166',
+    supporterQuote:
+      '„Gemeinsames Ziel ist es, den ukrainischen Agrarsektor auf dem europäischen Markt sichtbar zu machen und tragfähige Partnerschaften aufzubauen.“',
+    formatsBadge: 'Präsentationsformate',
+    formatsHeading: 'Ihre handfesten Vorteile',
+    formatsSubtitle: 'Ganzheitliches Programm zur Präsentation Ihres Unternehmens auf der Messe in Gent.',
+    bookingDeadlineBadge: 'Buchungsfrist',
+    bookingDeadlineHeading: 'Begrenzte Ausstellungsplätze im Pavillon',
+    bookingDeadlineDesc:
+      'Wir empfehlen eine frühzeitige Abstimmung des Formats und die termingerechte Übermittlung zweisprachiger Unterlagen.',
+    bookParticipationBtn: 'Teilnahme anfragen',
+    sectorsBadge: 'Messebereiche',
     sectorsHeading: 'Hauptthemen und Branchenschwerpunkte der Messe',
+    sectorsSubtitle: 'Thematische Schwerpunkte führender Hersteller und Experten aus ganz Europa.',
     benefitsHeading: 'Ihre handfesten Vorteile',
     participationProcessHeading: 'In 3 Schritten zu Ihrer Messepräsenz',
+    ctaHeading: 'Möchten Sie Ihr Unternehmen auf europäischer Ebene präsentieren?',
+    ctaDesc:
+      'Kontaktieren Sie unsere Fachberater für Ihr individuelles Präsentationskonzept und die Reservierung Ihrer Werbefläche.',
+    ctaBtn: 'Jetzt Beratung vereinbaren',
+    formatsList: [
+      {
+        title: '1. Professionelle Präsentation Ihres Betriebs',
+        desc: 'Unsere Manager erläutern den Messebesuchern fundiert Ihre Produkte, Kapazitäten und Wettbewerbsstärken.',
+      },
+      {
+        title: '2. Auslage von Druckmaterialien & Bannern',
+        desc: 'Verteilung zweisprachiger Kataloge, Broschüren, 400 Visitenkarten sowie vertikaler 1 × 2 m Werbebanner.',
+      },
+      {
+        title: '3. Videopräsentation auf Großmonitor',
+        desc: 'Vorführung eines 5-minütigen Videoclips alle 20 Minuten von 08:00 bis 20:00 Uhr im zentralen Pavillon.',
+      },
+      {
+        title: '4. Gezielte Partnersuche & Kontaktrecherche',
+        desc: 'Strukturierte Erfassung von Abnehmern, Futtermittelherstellern, Händlern oder Techniklieferanten nach Ihrem Profil.',
+      },
+      {
+        title: '5. Detaillierter Abschlussbericht',
+        desc: 'Nach Messeende erhalten Sie eine umfassende Auswertung aller geführten Gespräche und validierten Kontakte.',
+      },
+    ],
   },
   partners: {
     badge: 'Netzwerk & Kooperation',
@@ -108,10 +200,21 @@ export const de: Dictionary = {
       'Gemeinsam für nachhaltige Agrarwirtschaft, Innovation und europäische Partnerschaften.',
     leadText:
       'Erfolg im internationalen Agrargeschäft basiert auf verlässlichen Kooperationen. Zusammen mit gemeinnützigen Trägern, Technologieherstellern und europäischen Verbänden schaffen wir stabile Brücken für ukrainische Landwirte.',
+    officialCoordination: 'Offizielle Kooperationsabstimmung und gemeinsame Initiativen',
+    becomePartnerBadge: 'Neue Horizonte',
     becomePartnerHeading: 'Werden Sie Kooperationspartner',
     becomePartnerText:
       'Sind Sie Hersteller von Agrartechnik, Handelsunternehmen oder Dienstleister im europäischen Agrarsektor? Wir freuen uns über zukunftsweisende Kooperationen.',
     partnerCta: 'Kooperation besprechen',
+    targetFarmsTitle: 'Für Agrarbetriebe',
+    targetFarmsDesc:
+      'Direkter Zugang zu europäischen Abnehmern, professionelle Messepräsenz und fundierte Analyseberichte.',
+    targetImportersTitle: 'Für europäische Importeure',
+    targetImportersDesc:
+      'Zuverlässige Vermittlung geprüfter Lieferanten von Getreide, Ölsaaten, Obst, Gemüse und Veredelungsprodukten.',
+    targetMakersTitle: 'Für Technikhersteller',
+    targetMakersDesc:
+      'Förderung innovativer Agrartechnik, biologischer Pflanzenschutzmittel, Genetik und Stalltechnik.',
   },
   articles: {
     badge: 'Wissen & Analysen',
@@ -119,12 +222,22 @@ export const de: Dictionary = {
     subtitle:
       'Aktuelle Einblicke zu EU-Exportstandards, Messevorbereitung und Agrartrends.',
     readMore: 'Vollständigen Artikel lesen',
+    consultationTitle: 'Wünschen Sie eine professionelle Fachberatung zu diesem Thema?',
+    consultationDesc:
+      'Die Berater der Neue Wege GmbH beantworten gerne Ihre Fragen zu Agrarexporten, Marktanalysen und der Messebeteiligung in Gent 2027.',
+    contactConsultantBtn: 'Berater kontaktieren',
   },
   contact: {
     badge: 'Kontakt & Impressum',
     title: 'Sprechen Sie mit uns',
     subtitle:
       'Gerne beantworten wir Ihre Fragen zu Kooperationen, Dienstleistungen und Messepräsenz.',
+    ukraineOfficeBadge: 'Vertretung in der Ukraine',
+    ukraineOfficeDesc: 'Beratung zu Teilnahmeformaten, Materialaufbereitung und Kooperationen.',
+    austriaOfficeBadge: 'Hauptsitz Wien, Österreich',
+    austriaOfficeDesc: 'Internationale Verträge, Koordination in Wien und Vertretung auf EU-Messen.',
+    online247Badge: 'Online-Support 24/7',
+    online247Desc: 'Schnelle Rückfragen, Dokumentenaustausch und Vorabstimmung.',
     officeHeading: 'Standort Wien',
     phonesHeading: 'Telefonischer Direktkontakt',
     messengersHeading: 'Messenger-Kanäle',
@@ -132,12 +245,43 @@ export const de: Dictionary = {
     registrationNotice:
       'Neue Wege GmbH ist ein eingetragenes österreichisches Unternehmen mit Sitz in Wien.',
     contactFormHeading: 'Unverbindliche Anfrage senden',
-    nameLabel: 'Ihr vollständiger Name',
+    contactFormSubtitle: 'Individuelles Angebot für Messepräsenz oder B2B-Kooperation anfordern',
+    nameLabel: 'Ihr vollständiger Name oder Betrieb',
+    namePlaceholder: 'z.B. Johann Huber / Agrarbetrieb',
     emailLabel: 'E-Mail-Adresse',
+    emailPlaceholder: 'office@betrieb.at',
     phoneLabel: 'Telefonnummer / WhatsApp',
+    phonePlaceholder: '+43 664 123 4567',
     messageLabel: 'Ihre Nachricht oder Frage',
+    messagePlaceholder: 'Ich interessiere mich für die Präsentation unseres Betriebs auf der Messe Gent 2027...',
     sendButton: 'Anfrage absenden',
     sentSuccess: 'Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.',
+    sentSuccessDesc: 'Unser Kundenberater wird sich innerhalb eines Werktages mit Ihnen in Verbindung setzen.',
+    btnWriteWhatsapp: 'In WhatsApp schreiben',
+    btnSendAnother: 'Weitere Anfrage senden',
+    consentNotice: 'Mit dem Absenden erklären Sie sich mit der Kontaktaufnahme zur Beantwortung Ihrer Anfrage einverstanden.',
+    cardOfficialReg: 'Offizielle Registrierung: Wien, Republik Österreich',
+    cardPartnerUa: 'ТОВ «НОВА ДОРОГА» — Partnerschaft in der Ukraine',
+    cardEthics: 'Höchste Standards für Geschäftsethik und Vertraulichkeit',
+    businessCardCaption: 'Visitenkarte aus den offiziellen Unterlagen:',
+    impressumHeading: 'Offizielle Unternehmensangaben und Impressum',
+    atEntityHeading: 'Österreichische juristische Person:',
+    atCompanyLabel: 'Unternehmen:',
+    atRegPlaceLabel: 'Sitz:',
+    atRegPlaceValue: 'Wien, Österreich (Republik Österreich)',
+    atFieldLabel: 'Tätigkeitsbereich:',
+    atFieldValue: 'Agrarsektor, Vertretung, Zucht, Produktion, Veredelung und Handel mit Agrarerzeugnissen',
+    atSloganLabel: 'Slogan:',
+    uaEntityHeading: 'Partnergesellschaft in der Ukraine:',
+    uaCompanyLabel: 'Organisation:',
+    uaFieldLabel: 'Tätigkeitsfeld:',
+    uaFieldValue: 'Landwirtschaft, Viehzucht, Pflanzenbau, Forstwirtschaft und Weiterverarbeitung',
+    uaSupportLabel: 'Unterstützung:',
+    uaSupportValue: 'Gemeinnützige Organisation „Hoffnung & Würde“ (ZVR 1984068166)',
+    uaSloganLabel: 'Leitspruch:',
+    privacyHeading: 'Datenschutz und Vertraulichkeit:',
+    privacyText:
+      'Alle Angaben zu Kundenbetrieben, Anbauflächen und Geschäftsbeziehungen werden streng vertraulich behandelt und nur nach vorheriger schriftlicher Freigabe weitergegeben.',
   },
   footer: {
     tagline: 'Ihr Partner von der Gründung bis zum erfolgreichen Business.',
@@ -147,6 +291,15 @@ export const de: Dictionary = {
     privacyPolicy: 'Datenschutz',
     impressum: 'Impressum & Offenlegung',
     austriaOffice: 'Wien, Österreich',
-    ukraineOffice: 'Kiew / Regionen Ukraine',
+    ukraineOffice: 'Ukraine',
+    exhibitionNotice:
+      'Internationale Agrarfachmesse in Gent, Belgien (14.–17. Januar 2027). Offizielle Vertretung ukrainischer Agrarerzeuger.',
+    austriaLabel: 'Österreich',
+    ukraineLabel: 'Ukraine',
+  },
+  cards: {
+    packageIncluded: 'Leistungsumfang:',
+    surchargeEconomy: 'Economy +30%:',
+    companyBrand: 'Neue Wege GmbH',
   },
 };

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Target, Award, Globe, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Target, Award, Globe, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -41,7 +41,7 @@ export default async function AboutPage({
           <div className="lg:col-span-7 space-y-8">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-3 py-1 rounded-full border border-brand-border">
-                {contactsData.legal.companyNameUa} • {contactsData.legal.companyNameAt}
+                {typedLocale === 'uk' ? contactsData.legal.companyNameUa : contactsData.legal.companyNameAt} • {contactsData.address.display[typedLocale]}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mt-3 leading-snug">
                 {dict.about.companyIntro}
@@ -100,25 +100,25 @@ export default async function AboutPage({
               </div>
 
               <div>
-                <h4 className="text-lg font-bold text-brand-navy">Neue Wege GmbH</h4>
-                <p className="text-xs text-brand-muted mt-1">Wien, Österreich</p>
+                <h4 className="text-lg font-bold text-brand-navy">{contactsData.legal.companyNameAt}</h4>
+                <p className="text-xs text-brand-muted mt-1">{contactsData.address.display[typedLocale]}</p>
                 <p className="text-xs text-brand-purple font-bold mt-2">
-                  «{contactsData.legal.sloganUa}»
+                  «{contactsData.legal.slogan[typedLocale]}»
                 </p>
               </div>
 
               <div className="pt-4 border-t border-brand-border text-left space-y-2 text-xs">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                  <span>Штаб-квартира у Відні, Австрія</span>
+                  <span>{dict.about.cardHqVienna}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                  <span>Оперативне представництво в Україні</span>
+                  <span>{dict.about.cardOfficeUkraine}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                  <span>Багатомовні фахівці (DE / UK / EN)</span>
+                  <span>{dict.about.cardMultilingual}</span>
                 </div>
               </div>
             </div>
@@ -129,9 +129,9 @@ export default async function AboutPage({
       {/* 3. Five Directions Detailed List */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Спеціалізація"
+          badge={dict.about.fiveDirectionsBadge}
           title={dict.about.fiveDirectionsHeading}
-          subtitle="Комплексна структура напрямків компанії відповідно до установчих та виробничих стандартів."
+          subtitle={dict.about.fiveDirectionsSubtitle}
         />
 
         <div className="space-y-6">
@@ -175,10 +175,10 @@ export default async function AboutPage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="p-8 sm:p-12 rounded-3xl bg-brand-surface border border-brand-border max-w-3xl mx-auto space-y-4">
           <h2 className="text-2xl font-bold text-brand-navy">
-            Бажаєте співпрацювати з компанією «НОВА ДОРОГА»?
+            {dict.about.ctaHeading}
           </h2>
           <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
-            Ми відкриті до діалогу з агропідприємствами, фермерами, постачальниками та торговельними мережами.
+            {dict.about.ctaText}
           </p>
           <div className="pt-2">
             <Link

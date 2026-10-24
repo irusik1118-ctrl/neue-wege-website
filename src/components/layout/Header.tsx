@@ -31,11 +31,11 @@ export function Header({ locale, dict }: HeaderProps) {
           <div className="flex items-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5 text-brand-gold-light font-medium">
               <MapPin className="w-3.5 h-3.5 text-brand-gold" />
-              <span>{contactsData.address.display}</span>
+              <span>{contactsData.address.display[locale]}</span>
             </span>
             <span className="hidden md:inline-block text-white/30">•</span>
             <span className="hidden md:inline-block text-white/80">
-              ТОВ «НОВА ДОРОГА» & Neue Wege GmbH
+              {locale === 'uk' ? 'ТОВ «НОВА ДОРОГА» & Neue Wege GmbH' : 'Neue Wege GmbH & ТОВ «НОВА ДОРОГА»'}
             </span>
           </div>
 
@@ -45,7 +45,7 @@ export function Header({ locale, dict }: HeaderProps) {
               className="flex items-center gap-1.5 hover:text-brand-gold-light transition-colors"
             >
               <Phone className="w-3 h-3 text-brand-gold" />
-              <span className="text-white/70">UA:</span>
+              <span className="text-white/70">{locale === 'uk' ? 'UA:' : 'UA:'}</span>
               <span className="font-semibold">{contactsData.persons[0].displayPhone}</span>
             </a>
             <span className="hidden sm:inline-block text-white/30">•</span>
@@ -91,7 +91,7 @@ export function Header({ locale, dict }: HeaderProps) {
                 Neue Wege <span className="text-brand-gold font-bold">GmbH</span>
               </span>
               <span className="text-[11px] font-semibold text-brand-muted tracking-wide">
-                ТОВ «НОВА ДОРОГА»
+                {locale === 'uk' ? 'ТОВ «НОВА ДОРОГА»' : 'Austrian Agribusiness'}
               </span>
             </div>
           </Link>

@@ -15,33 +15,7 @@ export default async function EventsPage({
   const typedLocale = locale as Locale;
   const dict = getDictionary(typedLocale);
 
-  const formats = [
-    {
-      icon: Users,
-      title: '1. Професійна презентація вашого господарства',
-      desc: 'Наші менеджери детально розкажуть відвідувачам павільйону про вашу діяльність, продукцію, виробничі можливості та конкурентні переваги.',
-    },
-    {
-      icon: FileText,
-      title: '2. Розміщення друкованих матеріалів та банерів',
-      desc: 'Розповсюдження ваших двомовних каталогів, буклетів, листівок, 400 візиток та вертикального рекламного банера 1 × 2 м.',
-    },
-    {
-      icon: Video,
-      title: '3. Демонстрація відеоматеріалів на великому моніторі',
-      desc: 'Показ 5-хвилинного ролика кожні 20 хвилин із 08:00 до 20:00 у центрі виставкового простору.',
-    },
-    {
-      icon: Search,
-      title: '4. Збір інформації та контактів за вашим запитом',
-      desc: 'Цільовий пошук постачальників техніки, насіння, біопрепаратів або європейських покупців вашої продукції.',
-    },
-    {
-      icon: BarChart3,
-      title: '5. Зворотний зв’язок та фінальний звіт',
-      desc: 'Після виставки ви отримуєте структурований звіт про результати представлення та повний контактний перелік.',
-    },
-  ];
+  const formatIcons = [Users, FileText, Video, Search, BarChart3];
 
   return (
     <div className="space-y-20 py-12">
@@ -91,7 +65,7 @@ export default async function EventsPage({
             </div>
             <div>
               <p className="text-xs text-brand-muted">{dict.events.visitorsLabel}</p>
-              <p className="text-sm font-bold text-brand-navy">Близько 70 000 осіб</p>
+              <p className="text-sm font-bold text-brand-navy">{dict.events.visitorsValue}</p>
             </div>
           </div>
 
@@ -101,7 +75,7 @@ export default async function EventsPage({
             </div>
             <div>
               <p className="text-xs text-brand-muted">{dict.events.areaLabel}</p>
-              <p className="text-sm font-bold text-brand-navy">50 000 м² площі</p>
+              <p className="text-sm font-bold text-brand-navy">{dict.events.areaValue}</p>
             </div>
           </div>
         </div>
@@ -112,7 +86,7 @@ export default async function EventsPage({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-3 py-1 rounded-full border border-brand-border">
-              Концепція участі
+              {dict.events.conceptBadge}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy leading-snug">
               {dict.events.conceptHeading}
@@ -121,7 +95,7 @@ export default async function EventsPage({
               {dict.events.conceptText}
             </p>
             <p className="text-xs sm:text-sm text-brand-ink/80 leading-relaxed bg-brand-surface p-5 rounded-2xl border border-brand-border">
-              Вам не обов’язково долати великі відстані, нести значні витрати на поїздку, візи та логістику й залишати господарство без особистого контролю. Наша команда бере на себе всі організаційні завдання.
+              {dict.events.conceptCallout}
             </p>
 
             <div className="pt-2">
@@ -129,7 +103,7 @@ export default async function EventsPage({
                 href={`/${typedLocale}/services`}
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-purple hover:bg-brand-purple-deep text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-colors"
               >
-                <span>Ознайомитися з пакетами послуг</span>
+                <span>{dict.events.viewPackagesBtn}</span>
                 <ArrowRight className="w-4 h-4 text-brand-gold" />
               </Link>
             </div>
@@ -147,13 +121,13 @@ export default async function EventsPage({
                 />
               </div>
               <h4 className="text-base font-bold text-brand-navy">
-                За підтримки благодійної організації «Надія та Гідність»
+                {dict.events.supporterHeading}
               </h4>
               <p className="text-xs text-brand-muted">
-                Відень, Австрія • ZVR 1984068166
+                {dict.events.supporterSubtitle}
               </p>
               <p className="text-[11px] text-brand-ink/75 italic bg-brand-surface p-3 rounded-xl border border-brand-border">
-                «Спільна мета — зробити український аграрний сектор помітним на європейському ринку та створити нові можливості для міжнародного партнерства.»
+                {dict.events.supporterQuote}
               </p>
             </div>
           </div>
@@ -163,14 +137,14 @@ export default async function EventsPage({
       {/* 4. 5 FORMATS OF PRESENTATION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Формати участі"
+          badge={dict.events.formatsBadge}
           title={dict.events.benefitsHeading}
-          subtitle="Комплексна програма просування вашого бізнесу на виставці в Генті."
+          subtitle={dict.events.formatsSubtitle}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {formats.map((fmt, i) => {
-            const Icon = fmt.icon;
+          {dict.events.formatsList.map((fmt, i) => {
+            const Icon = formatIcons[i] || Users;
             return (
               <div
                 key={i}
@@ -192,13 +166,13 @@ export default async function EventsPage({
           <div className="bg-brand-purple rounded-2xl p-6 text-white flex flex-col justify-between">
             <div className="space-y-3">
               <span className="text-[11px] font-bold uppercase tracking-wider text-brand-gold-light bg-white/10 px-2.5 py-1 rounded-md">
-                Терміни бронювання
+                {dict.events.bookingDeadlineBadge}
               </span>
               <h3 className="text-lg font-bold">
-                Кількість місць у павільйоні обмежена
+                {dict.events.bookingDeadlineHeading}
               </h3>
               <p className="text-xs text-white/80 leading-relaxed">
-                Рекомендуємо завчасно узгодити формат презентації та надати двомовні матеріали для підготовки стенду.
+                {dict.events.bookingDeadlineDesc}
               </p>
             </div>
             <div className="pt-4">
@@ -206,7 +180,7 @@ export default async function EventsPage({
                 href={`/${typedLocale}/contact`}
                 className="inline-flex items-center justify-center w-full py-2.5 bg-brand-gold text-brand-navy font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-brand-gold-light transition-colors"
               >
-                Забронювати участь
+                {dict.events.bookParticipationBtn}
               </Link>
             </div>
           </div>
@@ -217,9 +191,9 @@ export default async function EventsPage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-brand-border p-8 sm:p-12 shadow-sm space-y-8">
           <SectionHeading
-            badge="Галузі виставки"
+            badge={dict.events.sectorsBadge}
             title={dict.events.sectorsHeading}
-            subtitle="Тематичні напрями, представлені виробниками та експертами з усієї Європи."
+            subtitle={dict.events.sectorsSubtitle}
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -240,17 +214,17 @@ export default async function EventsPage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-brand-purple to-brand-navy text-white space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold">
-            Бажаєте заявити про своє підприємство на європейському рівні?
+            {dict.events.ctaHeading}
           </h2>
           <p className="text-xs sm:text-sm text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Зв’яжіться з нашими менеджерами для узгодження індивідуального формату представлення та бронювання рекламного місця.
+            {dict.events.ctaDesc}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={`/${typedLocale}/contact`}
               className="px-6 py-3.5 bg-brand-gold text-brand-navy font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg hover:bg-brand-gold-light transition-all"
             >
-              Зв’язатися для узгодження участі
+              {dict.events.ctaBtn}
             </Link>
           </div>
         </div>

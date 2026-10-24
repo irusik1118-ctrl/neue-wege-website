@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Check, Star, ArrowRight } from 'lucide-react';
 import { PackageItem } from '@/data/packages';
 import { Locale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/get-dictionary';
 
 interface PackageCardProps {
   pkg: PackageItem;
@@ -10,6 +11,7 @@ interface PackageCardProps {
 
 export function PackageCard({ pkg, locale }: PackageCardProps) {
   const isPlatinum = pkg.id === 'platinum';
+  const dict = getDictionary(locale);
 
   return (
     <div
@@ -82,7 +84,7 @@ export function PackageCard({ pkg, locale }: PackageCardProps) {
               isPlatinum ? 'text-brand-gold-light' : 'text-brand-purple'
             }`}
           >
-            Склад пакета:
+            {dict.cards.packageIncluded}
           </p>
           <ul className="space-y-2.5">
             {pkg.features[locale].map((feat, i) => (

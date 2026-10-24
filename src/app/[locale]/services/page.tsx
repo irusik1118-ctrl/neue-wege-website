@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ShieldAlert, ArrowRight, HelpCircle, Check, Info } from 'lucide-react';
+import { ArrowRight, Check, Info } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -39,7 +39,7 @@ export default async function ServicesPage({
       {/* 2. PACKAGES FIRST */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Комплексні рішення"
+          badge={dict.services.packagesBadge}
           title={dict.services.packagesHeading}
           subtitle={dict.services.packagesSubheading}
         />
@@ -54,7 +54,7 @@ export default async function ServicesPage({
       {/* 3. INDIVIDUAL SERVICE PRICE LIST */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Прайс-лист"
+          badge={dict.services.singleServicesBadge}
           title={dict.services.singleServicesHeading}
           subtitle={dict.services.singleServicesSubheading}
         />
@@ -76,13 +76,13 @@ export default async function ServicesPage({
         <div className="bg-white rounded-3xl border border-brand-border p-6 sm:p-10 shadow-sm overflow-hidden">
           <div className="mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-3 py-1 rounded-full border border-brand-border">
-              Порівняльна таблиця цін
+              {dict.services.tableBadge}
             </span>
             <h3 className="text-2xl font-bold text-brand-navy mt-2">
-              Базова вартість vs Додаткові послуги в Економ пакеті (+30%)
+              {dict.services.tableHeading}
             </h3>
             <p className="text-xs text-brand-muted mt-1">
-              Відповідно до умов з комерційної пропозиції та офіційного прайс-листа.
+              {dict.services.tableSubtitle}
             </p>
           </div>
 
@@ -90,10 +90,10 @@ export default async function ServicesPage({
             <table className="w-full text-left text-xs border-collapse">
               <thead>
                 <tr className="border-b-2 border-brand-navy bg-brand-surface text-brand-navy font-black uppercase text-[11px] tracking-wider">
-                  <th className="py-4 px-4">Послуга</th>
-                  <th className="py-4 px-4">Стандартна ціна</th>
-                  <th className="py-4 px-4 text-brand-purple">Додаткова ціна (+30%)</th>
-                  <th className="py-4 px-4">Входить у Платиновий</th>
+                  <th className="py-4 px-4">{dict.services.thService}</th>
+                  <th className="py-4 px-4">{dict.services.thStandardPrice}</th>
+                  <th className="py-4 px-4 text-brand-purple">{dict.services.thEconomyExtra}</th>
+                  <th className="py-4 px-4">{dict.services.thIncludedInPlatinum}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-brand-border/60">
@@ -111,7 +111,7 @@ export default async function ServicesPage({
                     <td className="py-3 px-4">
                       <span className="inline-flex items-center gap-1 text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                         <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Так</span>
+                        <span>{dict.services.yes}</span>
                       </span>
                     </td>
                   </tr>
@@ -134,7 +134,7 @@ export default async function ServicesPage({
                 {dict.services.termsHeading}
               </h3>
               <p className="text-xs text-brand-muted">
-                Офіційні правила розрахунків та надання матеріалів
+                {dict.services.termsSubtitle}
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default async function ServicesPage({
 
           <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-brand-border/60">
             <p className="text-xs text-brand-muted">
-              Маєте запитання або бажаєте скласти індивідуальний кошторис?
+              {dict.services.questionPrompt}
             </p>
             <Link
               href={`/${typedLocale}/contact`}

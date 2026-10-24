@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Calendar, MapPin, Users, CheckCircle2, Phone, ShieldCheck, Sparkles, Building2 } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Users, Phone, ShieldCheck, Sparkles, Building2 } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -68,15 +68,15 @@ export default async function HomePage({
               <div className="pt-6 border-t border-brand-border/60 grid grid-cols-3 gap-4 text-center lg:text-left">
                 <div>
                   <p className="text-2xl font-black text-brand-purple">5</p>
-                  <p className="text-xs text-brand-muted">Напрямків агробізнесу</p>
+                  <p className="text-xs text-brand-muted">{dict.home.statAgriDirections}</p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-brand-gold">14–17.01</p>
-                  <p className="text-xs text-brand-muted">Гент, Бельгія 2027</p>
+                  <p className="text-xs text-brand-muted">{dict.home.statExhibitionDate}</p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-brand-navy">100%</p>
-                  <p className="text-xs text-brand-muted">Без особистого виїзду</p>
+                  <p className="text-xs text-brand-muted">{dict.home.statNoTravel}</p>
                 </div>
               </div>
             </div>
@@ -102,21 +102,21 @@ export default async function HomePage({
                     {contactsData.legal.companyNameAt}
                   </h2>
                   <p className="text-xs text-brand-purple font-bold uppercase tracking-wider">
-                    {contactsData.legal.companyNameUa}
+                    {typedLocale === 'uk' ? contactsData.legal.companyNameUa : 'International Agribusiness Platform'}
                   </p>
                   <p className="text-xs text-brand-muted italic">
-                    «{contactsData.legal.sloganUa}»
+                    «{contactsData.legal.slogan[typedLocale]}»
                   </p>
                 </div>
 
                 <div className="bg-brand-surface rounded-2xl p-4 border border-brand-border text-xs space-y-2 text-brand-ink/90">
                   <div className="flex items-center gap-2 text-brand-purple font-semibold">
                     <Building2 className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Wien, Österreich • Представництво в Україні</span>
+                    <span>{dict.home.repBadge}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Офіційні послуги та прямий вихід на ринок ЄС</span>
+                    <span>{dict.home.repTrustBadge}</span>
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default async function HomePage({
       {/* 2. CORE ACTIVITIES SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Комплексний підхід"
+          badge={dict.home.activitiesBadge}
           title={dict.home.activitiesHeading}
           subtitle={dict.home.activitiesSubheading}
         />
@@ -142,13 +142,13 @@ export default async function HomePage({
           <div className="bg-gradient-to-br from-brand-purple to-brand-purple-deep rounded-2xl p-8 text-white flex flex-col justify-between shadow-lg">
             <div className="space-y-4">
               <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-gold-light bg-white/10 px-3 py-1 rounded-full border border-brand-gold/30">
-                Індивідуальний підхід
+                {dict.home.customRepBadge}
               </span>
               <h3 className="text-2xl font-bold">
-                Потрібне індивідуальне представництво?
+                {dict.home.customRepTitle}
               </h3>
               <p className="text-xs text-white/80 leading-relaxed">
-                Ми узгоджуємо спеціальні умови участі та представлення ваших аграрних проєктів перед європейськими партнерами.
+                {dict.home.customRepDesc}
               </p>
             </div>
 
@@ -157,7 +157,7 @@ export default async function HomePage({
                 href={`/${typedLocale}/contact`}
                 className="inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl bg-brand-gold text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-gold-light transition-colors"
               >
-                <span>Обговорити умови</span>
+                <span>{dict.common.discussTerms}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -180,7 +180,7 @@ export default async function HomePage({
               </h2>
 
               <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl">
-                {dict.home.exhibitionSubheading} За підтримки австрійської благодійної організації «Надія та Гідність» ми презентуємо продукцію та можливості вашого господарства перед 70 000 європейських відвідувачів.
+                {dict.home.exhibitionSubheading} {dict.home.exhibitionSupporterText}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -190,7 +190,7 @@ export default async function HomePage({
                 </div>
                 <div className="flex items-center gap-2.5 bg-white/10 p-3 rounded-xl border border-white/10">
                   <Users className="w-4 h-4 text-brand-gold shrink-0" />
-                  <span>70 000+ відвідувачів • 50 000 м²</span>
+                  <span>{dict.home.exhibitionStats}</span>
                 </div>
               </div>
 
@@ -218,10 +218,10 @@ export default async function HomePage({
               </div>
               <div>
                 <p className="text-xs font-bold text-brand-gold-light">
-                  За підтримки організації
+                  {dict.home.supportedByTitle}
                 </p>
                 <p className="text-sm font-black text-white">
-                  «Надія та Гідність» (Wien)
+                  {dict.home.supportedByOrg}
                 </p>
               </div>
             </div>
@@ -232,7 +232,7 @@ export default async function HomePage({
       {/* 4. PACKAGES & PRICING PREVIEW */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Пакетні пропозиції"
+          badge={dict.home.packagesBadge}
           title={dict.home.servicesHeading}
           subtitle={dict.home.servicesSubheading}
         />
@@ -248,7 +248,7 @@ export default async function HomePage({
             href={`/${typedLocale}/services`}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-purple hover:text-brand-purple-deep underline underline-offset-4"
           >
-            <span>Переглянути весь прайс-лист окремих послуг (від 100 €)</span>
+            <span>{dict.home.viewAllServicesLink}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -257,7 +257,7 @@ export default async function HomePage({
       {/* 5. PARTNERS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Надійна співпраця"
+          badge={dict.home.partnersBadge}
           title={dict.home.partnersHeading}
           subtitle={dict.home.partnersSubheading}
         />
@@ -296,7 +296,7 @@ export default async function HomePage({
               </div>
 
               <div className="pt-4 mt-4 border-t border-brand-border/60 text-[11px] font-medium text-brand-muted flex items-center justify-between">
-                <span>{partner.location}</span>
+                <span>{partner.location[typedLocale]}</span>
                 {partner.regNumber && <span className="text-brand-purple font-semibold">{partner.regNumber}</span>}
               </div>
             </div>
@@ -309,7 +309,7 @@ export default async function HomePage({
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-3 py-1 rounded-full border border-brand-border">
-              База знань
+              {dict.home.articlesBadge}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mt-2">
               {dict.home.articlesHeading}
@@ -319,7 +319,7 @@ export default async function HomePage({
             href={`/${typedLocale}/articles`}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-purple hover:underline uppercase tracking-wider"
           >
-            <span>Всі публікації</span>
+            <span>{dict.common.allPublications}</span>
             <ArrowRight className="w-3.5 h-3.5 text-brand-gold" />
           </Link>
         </div>
@@ -377,7 +377,7 @@ export default async function HomePage({
               className="px-6 py-3.5 bg-brand-purple hover:bg-brand-purple-deep text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md flex items-center gap-2"
             >
               <Phone className="w-4 h-4 text-brand-gold" />
-              <span>Подзвонити: {contactsData.persons[0].displayPhone}</span>
+              <span>{dict.home.callPrefix} {contactsData.persons[0].displayPhone}</span>
             </a>
             <a
               href={contactsData.messenger.whatsappLink}

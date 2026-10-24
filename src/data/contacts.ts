@@ -1,6 +1,6 @@
 export interface ContactPerson {
   id: string;
-  country: string;
+  country: Record<'de' | 'uk' | 'en', string>;
   name: Record<'de' | 'uk' | 'en', string>;
   phone: string;
   displayPhone: string;
@@ -22,13 +22,21 @@ export const contactsData = {
   address: {
     city: 'Wien',
     country: 'Österreich',
-    display: 'Wien, Österreich',
+    display: {
+      de: 'Wien, Österreich',
+      uk: 'м. Відень, Австрія',
+      en: 'Vienna, Austria',
+    },
     postalCode: '1010', // pending full street confirmation
   },
   persons: [
     {
       id: 'ukraine',
-      country: 'Україна',
+      country: {
+        de: 'Ukraine',
+        uk: 'Україна',
+        en: 'Ukraine',
+      },
       name: {
         de: 'Oleg (Ukraine Repräsentant)',
         uk: 'Олег (Представник в Україні)',
@@ -40,7 +48,11 @@ export const contactsData = {
     },
     {
       id: 'austria',
-      country: 'Österreich',
+      country: {
+        de: 'Österreich',
+        uk: 'Австрія',
+        en: 'Austria',
+      },
       name: {
         de: 'Michael (Österreich Leitung)',
         uk: 'Михайло (Керівництво Австрія)',
@@ -65,8 +77,18 @@ export const contactsData = {
   legal: {
     companyNameAt: 'Neue Wege GmbH',
     companyNameUa: 'ТОВ «НОВА ДОРОГА»',
+    slogan: {
+      de: 'Ihr Partner von der Gründung bis zum erfolgreichen Business',
+      uk: 'Ваш партнер від заснування до успішного бізнесу',
+      en: 'Your partner from company inception to successful business',
+    },
     sloganDe: 'Ihr Partner von der Gründung bis zum erfolgreichen Business',
     sloganUa: 'Ваш партнер від заснування до успішного бізнесу',
+    tagline: {
+      de: 'Neuer Weg zu Entwicklung, Qualität und Wohlstand',
+      uk: 'Новий шлях до розвитку, якості та добробуту',
+      en: 'New path to development, quality and prosperity',
+    },
     taglineUa: 'Новий шлях до розвитку, якості та добробуту',
     taglineDe: 'Neuer Weg zu Entwicklung, Qualität und Wohlstand',
     taglineEn: 'New path to development, quality and prosperity',

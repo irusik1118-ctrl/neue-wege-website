@@ -36,13 +36,13 @@ export function Footer({ locale, dict }: FooterProps) {
             </div>
 
             <p className="text-xs text-white/70 leading-relaxed">
-              {contactsData.legal.sloganUa} • {contactsData.legal.sloganDe}
+              {contactsData.legal.slogan[locale]}
             </p>
 
             <div className="pt-2">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-brand-gold/30 text-xs text-brand-gold-light">
                 <ShieldCheck className="w-4 h-4 text-brand-gold" />
-                <span>Wien, Österreich</span>
+                <span>{contactsData.address.display[locale]}</span>
               </div>
             </div>
           </div>
@@ -99,29 +99,29 @@ export function Footer({ locale, dict }: FooterProps) {
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                <span className="text-white/80">{contactsData.address.display}</span>
+                <span className="text-white/80">{contactsData.address.display[locale]}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/60 text-[11px]">Україна:</p>
+                  <p className="text-white/60 text-[11px]">{contactsData.persons[0].country[locale]}:</p>
                   <a
                     href={`tel:${contactsData.persons[0].phone}`}
                     className="text-white font-semibold hover:text-brand-gold-light transition-colors"
                   >
-                    {contactsData.persons[0].displayPhone} (Олег)
+                    {contactsData.persons[0].displayPhone} ({contactsData.persons[0].name[locale]})
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/60 text-[11px]">Австрія:</p>
+                  <p className="text-white/60 text-[11px]">{contactsData.persons[1].country[locale]}:</p>
                   <a
                     href={`tel:${contactsData.persons[1].phone}`}
                     className="text-white font-semibold hover:text-brand-gold-light transition-colors"
                   >
-                    {contactsData.persons[1].displayPhone} (Михайло)
+                    {contactsData.persons[1].displayPhone} ({contactsData.persons[1].name[locale]})
                   </a>
                 </div>
               </li>
@@ -148,7 +148,7 @@ export function Footer({ locale, dict }: FooterProps) {
               {dict.footer.legalHeading}
             </h4>
             <p className="text-xs text-white/70 leading-relaxed mb-4">
-              Міжнародна аграрна виставка у Генті, Бельгія (14–17 січня 2027 року). Офіційне представництво інтересів українських агровиробників.
+              {dict.footer.exhibitionNotice}
             </p>
             <div className="flex flex-col gap-2 text-xs">
               <Link
@@ -173,9 +173,9 @@ export function Footer({ locale, dict }: FooterProps) {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
           <p>© {currentYear} Neue Wege GmbH / ТОВ «НОВА ДОРОГА». {dict.common.allRightsReserved}</p>
           <div className="flex items-center gap-4">
-            <span className="text-white/40">Wien • Österreich</span>
+            <span className="text-white/40">{dict.footer.austriaLabel}</span>
             <span>•</span>
-            <span className="text-white/40">Україна</span>
+            <span className="text-white/40">{dict.footer.ukraineLabel}</span>
           </div>
         </div>
       </div>

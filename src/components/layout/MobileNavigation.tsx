@@ -75,7 +75,7 @@ export function MobileNavigation({ locale, dict }: MobileNavigationProps) {
               </div>
               <div>
                 <p className="text-xs font-bold text-brand-purple">Neue Wege GmbH</p>
-                <p className="text-[11px] text-brand-muted">Wien, Österreich</p>
+                <p className="text-[11px] text-brand-muted">{contactsData.address.display[locale]}</p>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ export function MobileNavigation({ locale, dict }: MobileNavigationProps) {
                 className="flex items-center justify-center gap-2 py-2.5 px-3 bg-brand-surface hover:bg-brand-border/40 text-brand-ink text-xs font-semibold rounded-lg border border-brand-border"
               >
                 <Phone className="w-3.5 h-3.5 text-brand-purple" />
-                <span>{contactsData.persons[0].country}</span>
+                <span>{contactsData.persons[0].country[locale]}</span>
               </a>
               <a
                 href={contactsData.messenger.whatsappLink}
@@ -94,7 +94,7 @@ export function MobileNavigation({ locale, dict }: MobileNavigationProps) {
                 className="flex items-center justify-center gap-2 py-2.5 px-3 bg-brand-purple text-white text-xs font-semibold rounded-lg shadow-xs hover:bg-brand-purple-deep"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-brand-gold-light" />
-                <span>Месенджери</span>
+                <span>{dict.common.messengers}</span>
               </a>
             </div>
           </div>

@@ -24,6 +24,10 @@ export const en: Dictionary = {
     writeMessenger: 'Open Messenger',
     confirmed: 'Verified',
     pendingApproval: 'Pending Confirmation',
+    allPublications: 'All Articles',
+    discussTerms: 'Discuss Terms',
+    customAgreement: 'By Agreement',
+    messengers: 'Messengers',
   },
   home: {
     heroBadge: 'International Agricultural Cooperation • Vienna & Ukraine',
@@ -32,26 +36,46 @@ export const en: Dictionary = {
       'Neue Wege GmbH brings together traditional agricultural excellence with modern European breeding, production, and processing technologies. We bridge Ukrainian farming enterprises with leading European markets.',
     ctaServices: 'View Services & Pricing',
     ctaContact: 'Get in Touch',
+    statAgriDirections: 'Agribusiness Pillars',
+    statExhibitionDate: 'Ghent, Belgium 2027',
+    statNoTravel: 'No Travel Required',
+    repBadge: 'Vienna, Austria • Representation in Ukraine',
+    repTrustBadge: 'Official services & direct access to the EU market',
+    activitiesBadge: 'Integrated Approach',
     activitiesHeading: 'Core Business Activities',
     activitiesSubheading:
       'Five strategic agricultural pillars spanning animal husbandry, crop farming, forestry, processing and trade.',
+    customRepBadge: 'Tailored Approach',
+    customRepTitle: 'Need Individual Representation?',
+    customRepDesc:
+      'We coordinate customized participation terms and represent your agribusiness projects before European partners.',
     exhibitionHeading: 'International Agricultural Exhibition in Ghent, Belgium',
     exhibitionSubheading:
       'January 14–17, 2027. Comprehensive representation for Ukrainian farms without requiring personal travel.',
+    exhibitionSupporterText:
+      'Supported by the Austrian non-profit organization "Hoffnung & Würde", we showcase your farm produce and credentials to 70,000+ European trade visitors.',
     exhibitionBadge: 'Flagship Event 2027',
     exhibitionCta: 'Explore Ghent Exhibition',
+    exhibitionStats: '70,000+ Trade Visitors • 50,000 m²',
+    supportedByTitle: 'Supported by Non-Profit Partner',
+    supportedByOrg: '"Hoffnung & Würde" (Vienna)',
+    packagesBadge: 'Package Offers',
     servicesHeading: 'Services & Cooperation Packages',
     servicesSubheading:
       'Transparent single-service rates and structured packages (Economy / Platinum) tailored to your goals.',
+    viewAllServicesLink: 'View complete individual service price list (from €100)',
+    partnersBadge: 'Trusted Cooperation',
     partnersHeading: 'Strategic Partnerships',
     partnersSubheading:
       'Close cooperation with non-profit foundations, European distributors, and agribusiness leaders.',
+    articlesBadge: 'Knowledge Base',
     articlesHeading: 'Articles & Market Analysis',
     articlesSubheading:
       'Practical guidance on EU export standards, quality certification, and exhibition marketing.',
     ctaBannerTitle: 'Ready to introduce your agribusiness to European partners?',
     ctaBannerSubtitle:
       'Connect with our multilingual specialists in Vienna and Ukraine to discuss your customized presentation plan.',
+    callPrefix: 'Call:',
   },
   about: {
     badge: 'Company Profile',
@@ -66,23 +90,45 @@ export const en: Dictionary = {
     visionHeading: 'Our Objective',
     visionText:
       'Creating a modern, efficient and ecologically responsible enterprise that harmoniously unites agrarian traditions with innovative production, breeding and processing technologies.',
+    fiveDirectionsBadge: 'Specialization',
     fiveDirectionsHeading: 'Five Pillars of Our Operations',
+    fiveDirectionsSubtitle:
+      'Comprehensive operational structure aligned with statutory and production standards.',
     europeanMarketHeading: 'Representation Across European Markets',
     europeanMarketText:
       'With the support of the Austrian non-profit organization "Hoffnung & Würde" and through the initiative of Neue Wege GmbH, we offer Ukrainian agricultural enterprises a proven gateway into the European B2B ecosystem.',
+    cardHqVienna: 'Headquarters in Vienna, Republic of Austria',
+    cardOfficeUkraine: 'Operational representation in Ukraine',
+    cardMultilingual: 'Multilingual team (DE / UK / EN)',
+    ctaHeading: 'Interested in partnering with Neue Wege GmbH?',
+    ctaText:
+      'We welcome open dialogue with agricultural enterprises, farmers, equipment suppliers, and commercial trade networks.',
   },
   services: {
     badge: 'Price List & Conditions',
     title: 'Services, Pricing & Packages',
     subtitle:
       'Transparent representation services and flexible promotional packages for European trade exhibitions and market expansion.',
-    singleServicesHeading: 'Individual Service Price List',
-    singleServicesSubheading:
-      'Select individual promotion formats tailored to your current commercial priorities and budget.',
+    packagesBadge: 'Turnkey Packages',
     packagesHeading: 'Structured Cooperation Packages',
     packagesSubheading:
       'From the modular Economy Package (from €1,000) to the all-inclusive Platinum Package.',
+    singleServicesBadge: 'Price List',
+    singleServicesHeading: 'Individual Service Price List',
+    singleServicesSubheading:
+      'Select individual promotion formats tailored to your current commercial priorities and budget.',
+    tableBadge: 'Price Comparison',
+    tableHeading: 'Standard Rate vs. Additional Services in Economy (+30%)',
+    tableSubtitle: 'In accordance with official commercial proposal and price list.',
+    thService: 'Service',
+    thStandardPrice: 'Standard Rate',
+    thEconomyExtra: 'Surcharge Rate (+30%)',
+    thIncludedInPlatinum: 'Included in Platinum',
+    yes: 'Yes',
+    termsBadge: 'Terms & Conditions',
     termsHeading: 'Important Conditions & Tax Rules',
+    termsSubtitle: 'Official settlement conditions and material submission rules',
+    questionPrompt: 'Have questions or need a customized commercial quotation?',
   },
   events: {
     badge: 'Exhibition 2027',
@@ -93,13 +139,59 @@ export const en: Dictionary = {
     dateLabel: 'Dates',
     locationLabel: 'Location & Venue',
     visitorsLabel: 'Trade Visitors',
+    visitorsValue: 'Around 70,000 trade visitors',
     areaLabel: 'Exhibition Area',
+    areaValue: '50,000 m² exhibition area',
+    conceptBadge: 'Participation Concept',
     conceptHeading: 'We Represent Your Business in Europe — No Need to Travel',
     conceptText:
       'We understand how challenging it can be for farm executives to commit travel time and resources under current conditions. Neue Wege GmbH provides professional, on-the-ground representation directly in the central exhibition hall.',
+    conceptCallout:
+      'You do not need to travel long distances, incur heavy travel and accommodation expenses, or leave your farm unattended. Our team handles the entire on-site execution.',
+    viewPackagesBtn: 'View Service Packages',
+    supporterHeading: 'Supported by non-profit organization "Hoffnung & Würde"',
+    supporterSubtitle: 'Vienna, Austria • ZVR 1984068166',
+    supporterQuote:
+      '"Our shared goal is to raise the profile of Ukrainian agribusiness across Europe and establish lasting international partnerships."',
+    formatsBadge: 'Participation Formats',
+    formatsHeading: 'What We Deliver to Your Farm',
+    formatsSubtitle: 'Comprehensive program to promote your enterprise at the Ghent exhibition.',
+    bookingDeadlineBadge: 'Booking Deadline',
+    bookingDeadlineHeading: 'Limited Pavilion Capacity',
+    bookingDeadlineDesc:
+      'We advise early alignment of your preferred format and timely delivery of bilingual materials.',
+    bookParticipationBtn: 'Book Participation',
+    sectorsBadge: 'Exhibition Sectors',
     sectorsHeading: 'Key Sectors & Exhibition Focus Areas',
+    sectorsSubtitle: 'Key industry topics presented by producers and experts across Europe.',
     benefitsHeading: 'What We Deliver to Your Farm',
     participationProcessHeading: 'How to Join in 3 Steps',
+    ctaHeading: 'Ready to showcase your agribusiness at the European level?',
+    ctaDesc:
+      'Contact our team to agree on a tailored presentation plan and reserve your promotional slot.',
+    ctaBtn: 'Inquire About Participation',
+    formatsList: [
+      {
+        title: '1. Professional On-Site Presentation',
+        desc: 'Our managers personally present your farm credentials, produce, yields, and advantages to European delegates.',
+      },
+      {
+        title: '2. Distribution of Catalogues & Banners',
+        desc: 'Distribution of your bilingual brochures, booklets, 400 business cards, and display of a 1 × 2 m banner.',
+      },
+      {
+        title: '3. Big-Screen Video Presentation',
+        desc: 'Broadcasting your 5-minute video presentation every 20 minutes from 08:00 to 20:00 in the central hall.',
+      },
+      {
+        title: '4. Targeted Partner Research & Leads',
+        desc: 'Targeted gathering of prospective buyers, feed mills, machinery dealers, or seed centres aligned with your profile.',
+      },
+      {
+        title: '5. Detailed Post-Exhibition Report',
+        desc: 'Following the fair, you receive a structured analytical summary and comprehensive trade contact dossier.',
+      },
+    ],
   },
   partners: {
     badge: 'Network & Cooperation',
@@ -108,10 +200,21 @@ export const en: Dictionary = {
       'Fostering sustainable agriculture, technological innovation, and bilateral European partnerships.',
     leadText:
       'Neue Wege GmbH builds its international reach upon strong, trustworthy partnerships with charitable entities, trade networks and specialized agri-tech developers.',
+    officialCoordination: 'Official cooperation agreement and joint initiatives',
+    becomePartnerBadge: 'New Horizons',
     becomePartnerHeading: 'Become a Cooperation Partner',
     becomePartnerText:
       'Whether you are an agricultural producer, equipment vendor, feed maker, or trade distributor, we welcome mutually beneficial partnerships.',
     partnerCta: 'Discuss Partnership',
+    targetFarmsTitle: 'For Agricultural Producers',
+    targetFarmsDesc:
+      'Direct access to European buyers, exhibition showcase and post-event analytics.',
+    targetImportersTitle: 'For European Importers',
+    targetImportersDesc:
+      'Dependable sourcing of verified suppliers of grain, seeds, vegetables, berries and processed goods.',
+    targetMakersTitle: 'For Equipment Manufacturers',
+    targetMakersDesc:
+      'Promotion of innovative machinery, biostimulants, precision farming and agricultural hardware.',
   },
   articles: {
     badge: 'Knowledge & Guidance',
@@ -119,12 +222,22 @@ export const en: Dictionary = {
     subtitle:
       'Up-to-date guidance on EU compliance, trade fair preparation, and agricultural innovations.',
     readMore: 'Read Full Article',
+    consultationTitle: 'Need professional consultation on this topic?',
+    consultationDesc:
+      'Specialists at Neue Wege GmbH are ready to assist with export standards, market research, and Ghent 2027 exhibition representation.',
+    contactConsultantBtn: 'Speak with a Specialist',
   },
   contact: {
     badge: 'Credentials & Contact',
     title: 'Official Credentials, Address & Contacts',
     subtitle:
       'Get in direct touch with our team or schedule an appointment at our headquarters in Vienna.',
+    ukraineOfficeBadge: 'Representation in Ukraine',
+    ukraineOfficeDesc: 'Consultation on farm participation, material preparation and collaboration.',
+    austriaOfficeBadge: 'Headquarters Vienna, Austria',
+    austriaOfficeDesc: 'International contracting, Vienna coordination and European exhibition representation.',
+    online247Badge: 'Online Support 24/7',
+    online247Desc: 'Instant inquiries, file exchange and prompt coordination.',
     officeHeading: 'Headquarters Vienna',
     phonesHeading: 'Direct Phone Lines',
     messengersHeading: 'Direct Messengers (WhatsApp, Viber, Telegram)',
@@ -132,12 +245,43 @@ export const en: Dictionary = {
     registrationNotice:
       'Neue Wege GmbH is an officially registered Austrian company headquartered in Vienna.',
     contactFormHeading: 'Send an Inquiry',
+    contactFormSubtitle: 'Request a customized commercial quotation for exhibition participation or representation',
     nameLabel: 'Your Full Name or Company Name',
+    namePlaceholder: 'e.g. John Miller / Agro Farm',
     emailLabel: 'Email Address',
+    emailPlaceholder: 'office@farm.com',
     phoneLabel: 'Phone Number / WhatsApp',
+    phonePlaceholder: '+43 664 123 4567',
     messageLabel: 'Describe your inquiry or preferred collaboration',
+    messagePlaceholder: 'Interested in trade representation for our farm (crop farming, 2,000 ha) at Ghent 2027...',
     sendButton: 'Send Inquiry',
-    sentSuccess: 'Thank you! Your inquiry has been sent successfully. We will reply promptly.',
+    sentSuccess: 'Thank you! Your inquiry has been sent successfully.',
+    sentSuccessDesc: 'Our representative will contact you via phone or messenger within one business day.',
+    btnWriteWhatsapp: 'Message on WhatsApp',
+    btnSendAnother: 'Send another inquiry',
+    consentNotice: 'By submitting, you agree to the processing of your contact details solely to respond to your inquiry.',
+    cardOfficialReg: 'Official Registration: Vienna, Republic of Austria',
+    cardPartnerUa: 'LLC "NOVA DOROHA" — Partner Enterprise in Ukraine',
+    cardEthics: 'Full compliance with business ethics and commercial confidentiality',
+    businessCardCaption: 'Official company business card from publication:',
+    impressumHeading: 'Official Corporate Details & Legal Notice (Impressum)',
+    atEntityHeading: 'Austrian Legal Entity:',
+    atCompanyLabel: 'Company:',
+    atRegPlaceLabel: 'Registered Seat:',
+    atRegPlaceValue: 'Vienna, Austria (Republic of Austria)',
+    atFieldLabel: 'Business Scope:',
+    atFieldValue: 'Agricultural sector, representation, production, processing and trading of farm products',
+    atSloganLabel: 'Slogan:',
+    uaEntityHeading: 'Partner Structure in Ukraine:',
+    uaCompanyLabel: 'Organization:',
+    uaFieldLabel: 'Operations:',
+    uaFieldValue: 'Agriculture, animal husbandry, crop cultivation, forestry and produce processing',
+    uaSupportLabel: 'Support:',
+    uaSupportValue: 'Non-profit Organization "Hoffnung & Würde" (ZVR 1984068166)',
+    uaSloganLabel: 'Motto:',
+    privacyHeading: 'Privacy Policy & Data Protection:',
+    privacyText:
+      'Any client information, acreage figures, and commercial contacts shared for exhibition participation or advisory services are treated with strict confidentiality and disclosed to third parties only with prior written consent.',
   },
   footer: {
     tagline: 'Your trusted partner from company inception to successful business.',
@@ -148,5 +292,14 @@ export const en: Dictionary = {
     impressum: 'Legal Notice (Impressum)',
     austriaOffice: 'Vienna, Austria',
     ukraineOffice: 'Ukraine',
+    exhibitionNotice:
+      'International Agricultural Trade Fair in Ghent, Belgium (January 14–17, 2027). Official representation for Ukrainian agricultural producers.',
+    austriaLabel: 'Austria',
+    ukraineLabel: 'Ukraine',
+  },
+  cards: {
+    packageIncluded: 'Package Features:',
+    surchargeEconomy: 'Economy +30%:',
+    companyBrand: 'Neue Wege GmbH',
   },
 };

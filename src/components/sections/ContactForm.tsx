@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle2, MessageSquare, Phone } from 'lucide-react';
+import { Send, CheckCircle2, MessageSquare } from 'lucide-react';
 import { Dictionary } from '@/i18n/types';
 import { contactsData } from '@/data/contacts';
 
@@ -33,7 +33,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
           {dict.contact.sentSuccess}
         </h3>
         <p className="text-xs text-brand-muted max-w-md mx-auto">
-          Наш представник зв’яжеться з вами за вказаним номером або месенджером протягом робочого дня.
+          {dict.contact.sentSuccessDesc}
         </p>
 
         <div className="pt-4 flex flex-wrap justify-center gap-3">
@@ -44,14 +44,14 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
             className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-semibold hover:bg-emerald-700"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>Написати у WhatsApp</span>
+            <span>{dict.contact.btnWriteWhatsapp}</span>
           </a>
           <button
             type="button"
             onClick={() => setSubmitted(false)}
             className="px-4 py-2 bg-white text-brand-ink border border-brand-border rounded-xl text-xs font-medium hover:bg-brand-surface"
           >
-            Надіслати ще один запит
+            {dict.contact.btnSendAnother}
           </button>
         </div>
       </div>
@@ -69,7 +69,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          placeholder="Олег Шевченко / СТОВ «Колос»"
+          placeholder={dict.contact.namePlaceholder}
           className="w-full px-4 py-3 rounded-xl border border-brand-border focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 text-sm outline-hidden transition-all"
         />
       </div>
@@ -84,7 +84,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
             required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            placeholder="+380 97 123 4567"
+            placeholder={dict.contact.phonePlaceholder}
             className="w-full px-4 py-3 rounded-xl border border-brand-border focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 text-sm outline-hidden transition-all"
           />
         </div>
@@ -97,7 +97,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            placeholder="office@farm.ua"
+            placeholder={dict.contact.emailPlaceholder}
             className="w-full px-4 py-3 rounded-xl border border-brand-border focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 text-sm outline-hidden transition-all"
           />
         </div>
@@ -111,7 +111,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          placeholder="Цікавить представлення господарства (рослинництво, 2000 га) на виставці в Генті 2027 / Економ пакет..."
+          placeholder={dict.contact.messagePlaceholder}
           className="w-full px-4 py-3 rounded-xl border border-brand-border focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20 text-sm outline-hidden transition-all resize-none"
         />
       </div>
@@ -125,7 +125,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
       </button>
 
       <p className="text-[11px] text-brand-muted text-center leading-relaxed">
-        Натискаючи кнопку, ви погоджуєтеся на обробку контактних даних виключно для відповіді на ваш запит.
+        {dict.contact.consentNotice}
       </p>
     </form>
   );

@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Calendar, Tag, BookOpen } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { articlesData } from '@/data/articles';
 
 export default async function ArticlesPage({

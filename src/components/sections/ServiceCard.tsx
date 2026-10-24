@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { Check, ArrowRight, Tag } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { ServiceItem } from '@/data/services';
 import { Locale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/get-dictionary';
 
 interface ServiceCardProps {
   service: ServiceItem;
@@ -10,6 +11,8 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, locale, ctaLabel }: ServiceCardProps) {
+  const dict = getDictionary(locale);
+
   return (
     <div className="bg-white rounded-2xl border border-brand-border p-6 sm:p-7 hover:border-brand-gold hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
       <div>
@@ -31,13 +34,13 @@ export function ServiceCard({ service, locale, ctaLabel }: ServiceCardProps) {
                 </span>
                 {service.surchargePriceEur && (
                   <p className="text-[10px] text-brand-muted mt-0.5">
-                    Економ +30%: <span className="font-semibold">{service.surchargePriceEur} €</span>
+                    {dict.cards.surchargeEconomy} <span className="font-semibold">{service.surchargePriceEur} €</span>
                   </p>
                 )}
               </div>
             ) : (
               <span className="text-sm font-bold text-brand-gold bg-brand-surface px-2.5 py-1 rounded-md border border-brand-gold/40">
-                За домовленістю
+                {dict.common.customAgreement}
               </span>
             )}
           </div>

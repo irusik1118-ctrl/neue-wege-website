@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Calendar, Tag, Share2, Phone } from 'lucide-react';
+import { ArrowLeft, Calendar, Phone } from 'lucide-react';
 import { Locale, locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { articlesData } from '@/data/articles';
@@ -74,10 +74,10 @@ export default async function SingleArticlePage({
       {/* Help Callout */}
       <div className="bg-brand-surface rounded-2xl border border-brand-gold/60 p-6 sm:p-8 space-y-4">
         <h3 className="text-lg font-bold text-brand-navy">
-          Бажаєте отримати професійну консультацію щодо цієї теми?
+          {dict.articles.consultationTitle}
         </h3>
         <p className="text-xs text-brand-muted leading-relaxed">
-          Фахівці Neue Wege GmbH готові відповісти на всі питання щодо експорту агропродукції, аналізу ринку та участі у виставці в Генті 2027.
+          {dict.articles.consultationDesc}
         </p>
         <div className="pt-2">
           <Link
@@ -85,7 +85,7 @@ export default async function SingleArticlePage({
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-purple hover:bg-brand-purple-deep text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-colors"
           >
             <Phone className="w-4 h-4 text-brand-gold" />
-            <span>Зв’язатися з консультантом</span>
+            <span>{dict.articles.contactConsultantBtn}</span>
           </Link>
         </div>
       </div>

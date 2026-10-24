@@ -16,7 +16,11 @@ export interface PartnerItem {
     en: string;
   };
   logoUrl?: string;
-  location: string;
+  location: {
+    de: string;
+    uk: string;
+    en: string;
+  };
   regNumber?: string;
 }
 
@@ -39,7 +43,11 @@ export const partnersData: PartnerItem[] = [
       en: 'Austrian organization based in Vienna supporting the representation and integration of Ukrainian agricultural enterprises in European markets.',
     },
     logoUrl: '/brand/logo-hoffnung-wurde.jpg',
-    location: 'Wien, Österreich',
+    location: {
+      de: 'Wien, Österreich',
+      uk: 'м. Відень, Австрія',
+      en: 'Vienna, Austria',
+    },
     regNumber: 'ZVR 1984068166',
   },
   {
@@ -59,7 +67,11 @@ export const partnersData: PartnerItem[] = [
       uk: 'Співпраця з трейдерами зернових та олійних культур, переробними заводами, комбікормовими підприємствами в Австрії, Німеччині та країнах Бенілюксу.',
       en: 'Cooperation with European grain traders, food processors, feed compounders, and commercial buyers across Austria, Germany and Benelux.',
     },
-    location: 'EU (Österreich, Deutschland, Belgien)',
+    location: {
+      de: 'EU (Österreich, Deutschland, Belgien)',
+      uk: 'ЄС (Австрія, Німеччина, Бельгія)',
+      en: 'EU (Austria, Germany, Belgium)',
+    },
   },
   {
     id: 'machinery-genetics',
@@ -78,6 +90,10 @@ export const partnersData: PartnerItem[] = [
       uk: 'Партнерські зв’язки з провідними європейськими заводами сільгосптехніки, виробниками доїльного обладнання, систем мікроклімату та насіннєвими заводами.',
       en: 'Partnership with European machinery manufacturers, milking technology innovators, precision farming suppliers, and seed breeders.',
     },
-    location: 'EU',
+    location: {
+      de: 'EU',
+      uk: 'ЄС',
+      en: 'EU',
+    },
   },
 ];

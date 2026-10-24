@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import { Phone, MapPin, MessageSquare, ShieldCheck, Mail, FileText, CheckCircle2 } from 'lucide-react';
+import { Phone, MapPin, MessageSquare, FileText, CheckCircle2 } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ContactForm } from '@/components/sections/ContactForm';
 import { contactsData } from '@/data/contacts';
 
@@ -41,13 +40,13 @@ export default async function ContactPage({
           <div className="bg-white rounded-3xl border border-brand-border p-8 shadow-xs hover:border-brand-gold transition-colors space-y-4 flex flex-col justify-between">
             <div className="space-y-3">
               <span className="text-[11px] font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-2.5 py-1 rounded-full border border-brand-border">
-                Представництво в Україні
+                {dict.contact.ukraineOfficeBadge}
               </span>
               <h3 className="text-xl font-bold text-brand-navy">
                 {contactsData.persons[0].name[typedLocale]}
               </h3>
               <p className="text-xs text-brand-muted">
-                Консультації щодо участі господарств, підготовки матеріалів та співпраці.
+                {dict.contact.ukraineOfficeDesc}
               </p>
             </div>
 
@@ -66,13 +65,13 @@ export default async function ContactPage({
           <div className="bg-white rounded-3xl border border-brand-border p-8 shadow-xs hover:border-brand-gold transition-colors space-y-4 flex flex-col justify-between">
             <div className="space-y-3">
               <span className="text-[11px] font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-2.5 py-1 rounded-full border border-brand-border">
-                Штаб-квартира Відень, Австрія
+                {dict.contact.austriaOfficeBadge}
               </span>
               <h3 className="text-xl font-bold text-brand-navy">
                 {contactsData.persons[1].name[typedLocale]}
               </h3>
               <p className="text-xs text-brand-muted">
-                Міжнародні договори, координація у Відні та представництво на виставках ЄС.
+                {dict.contact.austriaOfficeDesc}
               </p>
             </div>
 
@@ -91,13 +90,13 @@ export default async function ContactPage({
           <div className="bg-brand-surface rounded-3xl border border-brand-gold/60 p-8 shadow-xs space-y-4 flex flex-col justify-between">
             <div className="space-y-3">
               <span className="text-[11px] font-bold uppercase tracking-wider text-brand-gold-dark bg-white px-2.5 py-1 rounded-full border border-brand-gold/30">
-                Онлайн-зв’язок 24/7
+                {dict.contact.online247Badge}
               </span>
               <h3 className="text-xl font-bold text-brand-navy">
                 WhatsApp, Viber, Telegram
               </h3>
               <p className="text-xs text-brand-muted">
-                Оперативні запитання, передача файлів та погодження умов співпраці.
+                {dict.contact.online247Desc}
               </p>
             </div>
 
@@ -126,7 +125,7 @@ export default async function ContactPage({
                 {dict.contact.contactFormHeading}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mt-2">
-                Надішліть запит на розрахунок представництва
+                {dict.contact.contactFormSubtitle}
               </h2>
             </div>
 
@@ -145,7 +144,7 @@ export default async function ContactPage({
                     {dict.contact.officeHeading}
                   </h3>
                   <p className="text-xs text-brand-muted font-medium">
-                    {contactsData.address.display}
+                    {contactsData.address.display[typedLocale]}
                   </p>
                 </div>
               </div>
@@ -153,20 +152,20 @@ export default async function ContactPage({
               <div className="space-y-3 pt-2 text-xs text-brand-ink/90">
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                  <span>Офіційна реєстрація: Відень, Республіка Австрія</span>
+                  <span>{dict.contact.cardOfficialReg}</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                  <span>ТОВ «НОВА ДОРОГА» — партнерство в Україні</span>
+                  <span>{dict.contact.cardPartnerUa}</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                  <span>Повна відповідність стандартам ділової етики та конфіденційності</span>
+                  <span>{dict.contact.cardEthics}</span>
                 </div>
               </div>
 
               <div className="p-4 rounded-2xl bg-brand-surface border border-brand-border text-center space-y-2">
-                <p className="text-xs text-brand-muted">Візитка компанії з оригінального буклету:</p>
+                <p className="text-xs text-brand-muted">{dict.contact.businessCardCaption}</p>
                 <div className="rounded-xl overflow-hidden border border-brand-gold/40 shadow-xs">
                   <Image
                     src="/brand/business-card.jpg"
@@ -188,36 +187,36 @@ export default async function ContactPage({
           <div className="flex items-center gap-3">
             <FileText className="w-6 h-6 text-brand-purple" />
             <h3 className="text-xl sm:text-2xl font-bold text-brand-navy">
-              Офіційні реквізити та правова інформація (Impressum)
+              {dict.contact.impressumHeading}
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 text-xs text-brand-ink/90 leading-relaxed border-t border-brand-border">
             <div className="space-y-3 bg-white p-6 rounded-2xl border border-brand-border">
               <h4 className="font-bold text-brand-purple text-sm">
-                Австрійська юридична особа:
+                {dict.contact.atEntityHeading}
               </h4>
-              <p><strong>Компанія:</strong> Neue Wege GmbH</p>
-              <p><strong>Місце реєстрації:</strong> Wien, Österreich (Відень, Австрія)</p>
-              <p><strong>Сфера діяльності:</strong> Аграрний сектор, представництво, виробництво, переробка та торгівля сільськогосподарською продукцією</p>
-              <p><strong>Слоган:</strong> Ihr Partner von der Gründung bis zum erfolgreichen Business</p>
+              <p><strong>{dict.contact.atCompanyLabel}</strong> {contactsData.legal.companyNameAt}</p>
+              <p><strong>{dict.contact.atRegPlaceLabel}</strong> {dict.contact.atRegPlaceValue}</p>
+              <p><strong>{dict.contact.atFieldLabel}</strong> {dict.contact.atFieldValue}</p>
+              <p><strong>{dict.contact.atSloganLabel}</strong> {contactsData.legal.sloganDe}</p>
             </div>
 
             <div className="space-y-3 bg-white p-6 rounded-2xl border border-brand-border">
               <h4 className="font-bold text-brand-purple text-sm">
-                Партнерська структура в Україні:
+                {dict.contact.uaEntityHeading}
               </h4>
-              <p><strong>Організація:</strong> ТОВ «НОВА ДОРОГА»</p>
-              <p><strong>Діяльність:</strong> Сільське господарство, тваринництво, рослинництво, лісове господарство та переробка продукції</p>
-              <p><strong>Підтримка:</strong> Благодійна організація «Надія та Гідність» (Hoffnung & Würde, ZVR 1984068166)</p>
-              <p><strong>Слоган:</strong> Новий шлях до розвитку, якості та добробуту</p>
+              <p><strong>{dict.contact.uaCompanyLabel}</strong> {contactsData.legal.companyNameUa}</p>
+              <p><strong>{dict.contact.uaFieldLabel}</strong> {dict.contact.uaFieldValue}</p>
+              <p><strong>{dict.contact.uaSupportLabel}</strong> {dict.contact.uaSupportValue}</p>
+              <p><strong>{dict.contact.uaSloganLabel}</strong> {contactsData.legal.taglineUa}</p>
             </div>
           </div>
 
           <div id="privacy" className="pt-4 border-t border-brand-border text-[11px] text-brand-muted leading-relaxed space-y-2">
-            <p className="font-semibold text-brand-navy">Політика конфіденційності та захист даних:</p>
+            <p className="font-semibold text-brand-navy">{dict.contact.privacyHeading}</p>
             <p>
-              Будь-яка інформація про клієнтів, обсяги виробництва та контактні дані, надані для участі у виставці або консультацій, обробляється суворо конфіденційно і передається третім особам виключно за попередньою письмовою згодою замовника.
+              {dict.contact.privacyText}
             </p>
           </div>
         </div>
