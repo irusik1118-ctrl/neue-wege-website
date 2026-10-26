@@ -178,7 +178,7 @@ export default async function ServicesPage({
                 {packageSignOff.slogan[typedLocale]}
               </p>
               <p className="text-xs sm:text-sm text-brand-muted font-semibold flex items-center gap-1.5">
-                <Heart className="w-4 h-4 text-rose-500 fill-rose-500 shrink-0" />
+                <Heart className="w-4 h-4 text-brand-gold fill-brand-gold shrink-0" />
                 <span>{packageSignOff.support[typedLocale]}</span>
               </p>
             </div>

@@ -41,7 +41,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
             href={contactsData.messenger.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-semibold hover:bg-emerald-700"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-xl text-xs font-semibold hover:bg-brand-purple-deep"
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span>{dict.contact.btnWriteWhatsapp}</span>

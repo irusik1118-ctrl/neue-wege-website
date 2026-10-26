@@ -157,43 +157,23 @@ export default async function HomePage({
 
             {/* Right Visual Card */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-md sm:max-w-lg bg-white rounded-3xl p-3 sm:p-4 border-2 border-brand-gold/60 shadow-2xl space-y-4 group">
-                <div className="relative aspect-[3/2] w-full rounded-2xl overflow-hidden bg-gradient-to-tr from-brand-purple/10 to-brand-gold/10 shadow-inner">
-                  <Image
-                    src="/brand/hero-presentation.jpg"
-                    alt="Neue Wege GmbH Presentation"
-                    width={1024}
-                    height={682}
-                    className="w-full h-full object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-500"
-                    priority
-                  />
-                  <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none" />
-                </div>
-
-                <div className="px-2 pt-1 pb-1 space-y-2 text-center">
-                  <div className="flex items-center justify-between text-xs text-brand-muted border-b border-brand-border/60 pb-2.5">
-                    <span className="font-bold text-brand-navy">
-                      {contactsData.legal.companyNameAt}
-                    </span>
-                    <span className="text-[11px] font-semibold text-brand-purple bg-brand-surface px-2.5 py-0.5 rounded-full border border-brand-border">
-                      {typedLocale === "ua" ? contactsData.legal.companyNameUa : "Wien • Ukraine"}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-brand-muted italic pt-0.5">
-                    «{contactsData.legal.slogan[typedLocale]}»
-                  </p>
-                </div>
-
-                <div className="bg-brand-surface rounded-2xl p-3 sm:p-3.5 border border-brand-border text-xs space-y-1.5 text-brand-ink/90">
-                  <div className="flex items-center gap-2 text-brand-purple font-semibold">
-                    <Building2 className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>{dict.home.repBadge}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>{dict.home.repTrustBadge}</span>
-                  </div>
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg overflow-hidden rounded-3xl border border-brand-gold/60 bg-white shadow-lg">
+                <Image
+                  src="/brand/hero-presentation.jpg"
+                  alt="Neue Wege GmbH – Ihr Partner von der Gründung bis zum erfolgreichen Business"
+                  width={1024}
+                  height={682}
+                  sizes="(max-width: 1024px) 90vw, 520px"
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+                <div className="flex items-center justify-between gap-3 border-t-2 border-brand-gold bg-brand-navy px-4 py-3 text-xs">
+                  <span className="font-bold text-white">
+                    {contactsData.legal.companyNameAt}
+                  </span>
+                  <span className="font-semibold text-brand-gold-light text-right">
+                    {typedLocale === "ua" ? contactsData.legal.companyNameUa : contactsData.address.display[typedLocale]}
+                  </span>
                 </div>
               </div>
             </div>
@@ -356,10 +336,10 @@ export default async function HomePage({
               <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-2 border-brand-gold shadow-2xl bg-white p-2">
                 <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-brand-surface">
                   <Image
-                    src="/brand/hero-presentation.jpg"
+                    src="/brand/consultant-navy.jpg"
                     alt="Neue Wege Client Support Specialist"
                     fill
-                    className="object-cover object-right"
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 400px"
                     priority
                   />

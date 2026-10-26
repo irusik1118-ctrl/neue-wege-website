@@ -131,10 +131,10 @@ export function BusinessCardModal({ locale }: BusinessCardModalProps) {
             href={contactsData.messenger.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-2.5 bg-white rounded-xl border border-brand-border hover:border-emerald-500 transition-colors text-emerald-800"
+            className="flex items-center justify-between p-2.5 bg-white rounded-xl border border-brand-border hover:border-brand-gold transition-colors text-brand-purple"
           >
             <div className="flex items-center gap-2">
-              <MessageCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+              <MessageCircle className="w-4 h-4 text-brand-gold shrink-0" />
               <div>
                 <p className="text-[10px] text-brand-muted leading-none">WhatsApp / Viber / Telegram</p>
                 <p className="font-bold text-xs">{contactsData.messenger.displayPhone}</p>

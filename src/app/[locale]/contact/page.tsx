@@ -117,9 +117,9 @@ export default async function ContactPage({
                 href={contactsData.messenger.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-800"
+                className="flex items-center gap-2 text-sm font-bold text-brand-purple hover:text-brand-purple-deep"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-600 shrink-0" />
+                <MessageSquare className="w-4 h-4 text-brand-gold shrink-0" />
                 <span>{contactsData.messenger.displayPhone}</span>
               </a>
             </div>
