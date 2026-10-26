@@ -1,28 +1,27 @@
 export interface ServiceItem {
   id: string;
-  priceEur: number | null; // null for on-demand
-  isCustomPrice?: boolean;
+  priceEur: number;
+  surchargePriceEur: number; // +30% for Economy package
   unit: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   title: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   description: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   specs: {
     de: string[];
-    uk: string[];
+    ua: string[];
     en: string[];
   };
-  surchargePriceEur?: number; // +30% for extra services in economy package
 }
 
 export const servicesData: ServiceItem[] = [
@@ -31,38 +30,38 @@ export const servicesData: ServiceItem[] = [
     priceEur: 470,
     surchargePriceEur: 611,
     unit: {
-      de: 'Bis zu 5 Min. Präsentation',
-      uk: 'До 5 хвилин ролик',
-      en: 'Up to 5 min presentation',
+      de: 'Bis zu 5 Minuten',
+      ua: 'До 5 хвилин',
+      en: 'Up to 5 minutes',
     },
     title: {
-      de: 'Videopräsentation Ihres Unternehmens',
-      uk: 'Відеопрезентація вашого підприємства',
-      en: 'Video Presentation of Your Enterprise',
+      de: 'Videopräsentation des Unternehmens auf dem Pavillon-Monitor',
+      ua: 'Відеопрезентація підприємства на моніторі виставкового павільйону',
+      en: 'Company video presentation on the exhibition pavilion monitor',
     },
     description: {
-      de: 'Vorführung eines fünfminütigen Videoclips über Ihr Unternehmen auf einem Großbildschirm im Ausstellungspavillon.',
-      uk: 'Демонстрація п’ятихвилинного відеоролика про ваше господарство на великому моніторі у виставковому павільйоні.',
-      en: 'Demonstration of a 5-minute video clip about your farm or enterprise on a large monitor in the exhibition pavilion.',
+      de: 'Vorführung eines fünfminütigen Videoclips über Ihr Unternehmen auf einem Großbildschirm im Pavillon.',
+      ua: 'Демонстрація п’ятихвилинного відеоролика про ваше господарство на великому моніторі у виставковому павільйоні.',
+      en: 'Demonstration of a five-minute video clip about your enterprise on a large monitor in the pavilion.',
     },
     specs: {
       de: [
-        'Präsentationszeit: 08:00 bis 20:00 Uhr',
+        'Sendezeit: 08:00 bis 20:00 Uhr',
         'Wiederholung: alle 20 Minuten',
         'Dauer: bis zu 5 Minuten',
         'Wiedergabe ohne Ton (englische Untertitel empfohlen)',
       ],
-      uk: [
+      ua: [
         'Період демонстрації: з 08:00 до 20:00',
         'Періодичність показу: кожні 20 хвилин',
         'Тривалість ролика: до 5 хвилин',
         'Відтворення без звуку (рекомендовані англомовні субтитри)',
       ],
       en: [
-        'Broadcast period: 08:00 to 20:00',
+        'Display period: 08:00 to 20:00',
         'Frequency: every 20 minutes',
         'Duration: up to 5 minutes',
-        'Silent playback (English subtitles strongly recommended)',
+        'Silent playback (English subtitles recommended)',
       ],
     },
   },
@@ -71,19 +70,19 @@ export const servicesData: ServiceItem[] = [
     priceEur: 350,
     surchargePriceEur: 455,
     unit: {
-      de: 'Set mit 200 Exemplaren',
-      uk: 'Комплект із 200 примірників',
-      en: 'Set of 200 copies',
+      de: '200 Exemplare',
+      ua: '200 примірників',
+      en: '200 copies',
     },
     title: {
-      de: 'Gedruckte Werbematerialien',
-      uk: 'Друкована рекламна продукція',
-      en: 'Printed Promotional Materials',
+      de: 'Präsentation gedruckter Werbematerialien',
+      ua: 'Представлення друкованої рекламної продукції',
+      en: 'Presentation of printed advertising materials',
     },
     description: {
       de: 'Präsentation von Broschüren, Katalogen und A4-Informationsblättern für interessierte Messebesucher.',
-      uk: 'Розміщення брошур, каталогів, інформаційних листів формату А4 та презентаційних видань.',
-      en: 'Placement of brochures, catalogues, A4 informational sheets and promotional publications.',
+      ua: 'Розміщення брошур, каталогів, інформаційних листів формату А4 та презентаційних видань.',
+      en: 'Placement of brochures, catalogues, and A4 info sheets for prospective clients.',
     },
     specs: {
       de: [
@@ -92,7 +91,7 @@ export const servicesData: ServiceItem[] = [
         'Pflichtvoraussetzung: Inhalte auf Ukrainisch & Englisch',
         'Direkte Auslage für Fachbesucher',
       ],
-      uk: [
+      ua: [
         'Обсяг: 200 примірників',
         'Формати: брошури, каталоги, інфолисти А4',
         'Обов’язкова вимога: матеріали українською та англійською мовами',
@@ -101,8 +100,8 @@ export const servicesData: ServiceItem[] = [
       en: [
         'Volume: 200 copies',
         'Formats: brochures, catalogues, A4 sheets',
-        'Mandatory requirement: text in Ukrainian and English',
-        'Directly available to interested trade visitors',
+        'Requirement: materials in Ukrainian & English',
+        'Accessible to trade visitors',
       ],
     },
   },
@@ -112,26 +111,26 @@ export const servicesData: ServiceItem[] = [
     surchargePriceEur: 156,
     unit: {
       de: 'Bis zu 200 Exemplare',
-      uk: 'До 200 примірників',
+      ua: 'До 200 примірників',
       en: 'Up to 200 copies',
     },
     title: {
-      de: 'Werbeflyer (A4 gefalzt)',
-      uk: 'Рекламні флаєри',
-      en: 'Promotional Flyers',
+      de: 'Verteilung von Werbeflyern',
+      ua: 'Розповсюдження рекламних флаєрів',
+      en: 'Distribution of promotional flyers',
     },
     description: {
-      de: 'Kompakte Präsentation Ihres Betriebs, der Produkte und wichtigsten Wettbewerbsvorteile im handlichen Format.',
-      uk: 'Розміщення рекламної інформації у вигляді листівок формату А4, складених удвоє.',
-      en: 'Flyers in folded A4 format for a concise overview of key competitive advantages and products.',
+      de: 'Kompakte Darstellung Ihres Betriebs, der Produkte und Wettbewerbsvorteile auf A4-Faltblättern.',
+      ua: 'Розміщення рекламної інформації у вигляді листівок формату А4, складених удвоє.',
+      en: 'Distribution of advertising leaflets in folded A4 format highlighting your farm and produce.',
     },
     specs: {
       de: [
-        'Format: A4, 1-Bruch-Falz',
+        'Format: A4, gefalzt',
         'Auflage: bis zu 200 Exemplare',
         'Kompakte Übersicht von Produkten & Kontakten',
       ],
-      uk: [
+      ua: [
         'Формат: А4, складені удвоє',
         'Наклад: до 200 примірників',
         'Коротка презентація господарства та продукції',
@@ -139,7 +138,7 @@ export const servicesData: ServiceItem[] = [
       en: [
         'Format: folded A4 leaflets',
         'Volume: up to 200 copies',
-        'Concise company summary and contact details',
+        'Brief presentation of enterprise and produce',
       ],
     },
   },
@@ -149,34 +148,34 @@ export const servicesData: ServiceItem[] = [
     surchargePriceEur: 130,
     unit: {
       de: '400 Stück',
-      uk: '400 штук',
+      ua: '400 штук',
       en: '400 cards',
     },
     title: {
-      de: 'Visitenkarten-Auslage',
-      uk: 'Візитні картки',
-      en: 'Business Cards Distribution',
+      de: 'Platzierung von Visitenkarten',
+      ua: 'Розміщення візитних карток',
+      en: 'Placement of business cards',
     },
     description: {
-      de: 'Gezielte Weitergabe Ihrer geschäftlichen Kontaktdaten an europäische Fachbesucher und potenzielle Abnehmer.',
-      uk: 'Розміщення візиток для збереження контактів відвідувачами та потенційними партнерами.',
-      en: 'Distribution of business cards allowing trade visitors and prospective buyers to save your contacts.',
+      de: 'Gezielte Weitergabe Ihrer Geschäftskontaktdaten an Fachbesucher und potenzielle Partner.',
+      ua: 'Розміщення візиток для збереження контактів відвідувачами та потенційними партнерами.',
+      en: 'Placement of company business cards to establish direct contact with European partners.',
     },
     specs: {
       de: [
         'Menge: 400 Stück',
-        'Möglichkeit zur Beilage an Broschüren und Kataloge',
-        'Präsentation auf dem Haupttisch des Pavillons',
+        'Beilage an Broschüren und Kataloge möglich',
+        'Präsentation auf zentralen Informationstheken',
       ],
-      uk: [
+      ua: [
         'Кількість: 400 штук',
         'Можливість прикріплення до брошур і каталогів',
         'Розміщення на головних інформаційних стійках',
       ],
       en: [
-        'Quantity: 400 cards',
-        'Can be attached to brochures or distributed at counters',
-        'Prominent placement in the central pavilion zone',
+        'Quantity: 400 pieces',
+        'Can be paired with brochures and catalogues',
+        'Prominently displayed at information desks',
       ],
     },
   },
@@ -185,35 +184,35 @@ export const servicesData: ServiceItem[] = [
     priceEur: 450,
     surchargePriceEur: 585,
     unit: {
-      de: '1 × 2 Meter Banner',
-      uk: '1 × 2 м банер',
-      en: '1 × 2 m banner',
+      de: '1 × 2 m',
+      ua: '1 × 2 м',
+      en: '1 × 2 m',
     },
     title: {
-      de: 'Vertikaler Werbebanner',
-      uk: 'Рекламний банер',
-      en: 'Advertising Exhibition Banner',
+      de: 'Werbebanner',
+      ua: 'Рекламний банер',
+      en: 'Advertising banner',
     },
     description: {
-      de: 'Visuelle Großpräsentation mit Firmenname, Logo, Produkten, Tätigkeitsfeldern und Kontaktdaten.',
-      uk: 'Вертикальний рекламний банер для наочного представлення підприємства, логотипу та продукції.',
-      en: 'Vertical banner showcasing company identity, logo, products, core activities, and contact details.',
+      de: 'Visuelle Großpräsentation mit Name, Logo, Produkten und Kontaktdaten Ihres Unternehmens.',
+      ua: 'Вертикальний рекламний банер для наочного представлення підприємства, логотипу та продукції.',
+      en: 'Vertical banner showcasing company name, logo, agricultural produce, and contact details.',
     },
     specs: {
       de: [
-        'Standardformat: 1 × 2 Meter',
+        'Format: 1 × 2 Meter',
         'Vertikale Ausrichtung',
-        'Hervorgehobene Platzierung im Pavillon',
+        'Platzierung im Pavillon',
       ],
-      uk: [
-        'Стандартний розмір: 1 × 2 метри',
+      ua: [
+        'Розмір: 1 × 2 м',
         'Формат: вертикальний рекламний банер',
-        'Розміщення в узгодженому форматі виставкового простору',
+        'Розміщення у виставковому просторі',
       ],
       en: [
-        'Standard size: 1 × 2 meters',
+        'Size: 1 × 2 m',
         'Format: vertical banner',
-        'Placement within the coordinated pavilion space',
+        'Pavilion display positioning',
       ],
     },
   },
@@ -222,38 +221,38 @@ export const servicesData: ServiceItem[] = [
     priceEur: 250,
     surchargePriceEur: 325,
     unit: {
-      de: 'Recherche & Kontaktliste',
-      uk: 'Пошук за індивідуальним запитом',
-      en: 'Search & contact dossier',
+      de: 'Auf Kundenanfrage',
+      ua: 'За запитом замовника',
+      en: 'Upon client request',
     },
     title: {
-      de: 'Informationssammlung & Partnersuche',
-      uk: 'Збір інформації та пошук потенційних партнерів',
-      en: 'Partner Research & Contact Gathering',
+      de: 'Informationssammlung & Kontaktrecherche zu potenziellen Partnern',
+      ua: 'Збір інформації та контактів потенційних партнерів',
+      en: 'Information gathering and contacts of prospective partners',
     },
     description: {
-      de: 'Gezielte Marktrecherche nach passenden Partnern: Landmaschinenhersteller, Futtermittel, Tierzucht, Futter- & Saatgutabnehmer.',
-      uk: 'Збір інформації за вашим індивідуальним запитом у визначеному сегменті європейського аграрного ринку.',
-      en: 'Gathering relevant trade contacts and market intelligence according to your specific agricultural sector needs.',
+      de: 'Gezielte Marktrecherche nach passenden Partnern: Technik, Tierzucht, Futter, Saatgut und Direktabnehmer.',
+      ua: 'Збір інформації за вашим індивідуальним запитом у визначеному сегменті європейського аграрного ринку.',
+      en: 'Targeted research for agricultural machinery, feeds, seeds, and prospective produce buyers.',
     },
     specs: {
       de: [
         'Vorab-Abstimmung der Suchkriterien',
-        'Lieferanten von Agrartechnik, Futter, Tierarznei',
-        'Potenzielle Direktabnehmer Ihrer Erzeugnisse',
+        'Lieferanten von Agrartechnik und Futter',
+        'Direktabnehmer Ihrer Erzeugnisse',
         'Strukturierter Bericht nach Messeabschluss',
       ],
-      uk: [
+      ua: [
         'Попереднє узгодження напрямку пошуку та критеріїв',
         'Постачальники с/г техніки, кормів, ветеринарії',
-        'Потенційні покупці вашої продукції та партнерські проєкти',
+        'Потенційні покупці вашої продукції',
         'Фінальний звіт за підсумками виставки',
       ],
       en: [
-        'Preliminary alignment on search criteria',
-        'Machinery suppliers, veterinary, feeds, seed centres',
-        'Prospective European buyers of your produce',
-        'Structured post-exhibition summary report',
+        'Search criteria agreed beforehand',
+        'Machinery, feeds, seeds, veterinary suppliers',
+        'Direct buyers of your harvest',
+        'Detailed report following the exhibition',
       ],
     },
   },
@@ -262,73 +261,51 @@ export const servicesData: ServiceItem[] = [
     priceEur: 300,
     surchargePriceEur: 390,
     unit: {
-      de: '12 Monate Präsenz',
-      uk: '12 місяців розміщення',
-      en: '12 months listing',
+      de: '12 Monate',
+      ua: '12 місяців',
+      en: '12 months',
     },
     title: {
-      de: 'Jährliche Präsenz im Online-Katalog',
-      uk: 'Річне розміщення в онлайн-каталозі',
-      en: 'Annual Online Directory Listing',
+      de: 'Eintrag im Online-Unternehmenskatalog',
+      ua: 'Розміщення в онлайн-каталозі підприємств',
+      en: 'Listing in enterprise online directory',
     },
     description: {
       de: 'Ganzjährige Darstellung Ihres Agrarunternehmens auf den Web-Ressourcen für europäische Partner.',
-      uk: 'Розміщення інформації про ваше підприємство в онлайн-каталозі українських аграрних виробників.',
-      en: 'Listing your agricultural enterprise in the dedicated online directory for European buyers and partners.',
+      ua: 'Розміщення інформації про ваше підприємство в онлайн-каталозі терміном на 12 місяців.',
+      en: 'Year-round enterprise profile in online agro directory for European buyers and partners.',
     },
     specs: {
       de: [
         'Laufzeit: 12 Monate',
         'Unternehmensprofil, Fotos, Produktionsangaben',
-        'Verlinkung zu Ihren direkten Kontakten',
+        'Direkte Kontaktaufnahme',
       ],
-      uk: [
+      ua: [
         'Термін дії: 12 місяців',
-        'Назва, опис, напрями виробництва, контакти',
-        'Постійна доступність для європейських партнерів',
+        'Профіль підприємства, фотографії, опис продукції',
+        'Прямий зв’язок із європейськими контрагентами',
       ],
       en: [
         'Duration: 12 months',
-        'Company profile, activities, produce, verified contacts',
-        'Continuous visibility for prospective partners',
-      ],
-    },
-  },
-  {
-    id: 'individual-representation',
-    priceEur: null,
-    isCustomPrice: true,
-    unit: {
-      de: 'Nach Vereinbarung',
-      uk: 'За домовленістю',
-      en: 'By agreement',
-    },
-    title: {
-      de: 'Individuelle Geschäftsvertretung',
-      uk: 'Індивідуальне представлення інтересів',
-      en: 'Individual Business Representation',
-    },
-    description: {
-      de: 'Maßgeschneidertes B2B-Vertretungskonzept durch unser mehrsprachiges Team auf der Messe und im EU-Markt.',
-      uk: 'Особистий менеджер, індивідуальні переговори, організація зустрічей та розширені маркетингові формати.',
-      en: 'Tailored B2B representation by experienced multilingual managers directly negotiating on your behalf.',
-    },
-    specs: {
-      de: [
-        'Persönliche Betreuung durch erfahrene Manager',
-        'Verhandlungen mit europäischen Großkunden',
-        'Detaillierte Vor- und Nachbereitung',
-      ],
-      uk: [
-        'Персональний менеджер та багатомовний супровід',
-        'Прямі переговори з європейськими контрагентами',
-        'Індивідуальний звіт та координація співпраці',
-      ],
-      en: [
-        'Dedicated senior multilingual representative',
-        'Direct negotiations with European buyers and suppliers',
-        'Customized agenda, meeting coordination and reporting',
+        'Company profile, images, produce details',
+        'Direct link to your representatives',
       ],
     },
   },
 ];
+
+export const priceTableSummary = {
+  totalTitle: {
+    de: 'Gesamtwert aller Einzelleistungen',
+    ua: 'Загальна вартість усіх послуг окремо',
+    en: 'Total value of all individual services',
+  },
+  totalUnit: {
+    de: 'Vollständiges Paket',
+    ua: 'Повний перелік',
+    en: 'Complete list',
+  },
+  businessTotalEur: 2040,
+  economyTotalEur: 2652,
+};

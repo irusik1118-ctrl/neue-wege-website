@@ -1,39 +1,39 @@
 export interface PackageItem {
-  id: 'economy' | 'platinum';
+  id: 'business' | 'economy';
   name: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   badge: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   subtitle: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   priceDisplay: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   priceNote: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
-  referenceSumEur?: number;
+  totalStandardPriceEur?: number;
   features: {
     de: string[];
-    uk: string[];
+    ua: string[];
     en: string[];
   };
   ctaText: {
     de: string;
-    uk: string;
+    ua: string;
     en: string;
   };
   isPopular?: boolean;
@@ -41,142 +41,167 @@ export interface PackageItem {
 
 export const packagesData: PackageItem[] = [
   {
+    id: 'business',
+    name: {
+      de: 'Business-Paket',
+      ua: 'Бізнес-пакет',
+      en: 'Business Package',
+    },
+    badge: {
+      de: 'Komplett-Präsenz',
+      ua: 'Комплексне представлення',
+      en: 'Complete Presence',
+    },
+    subtitle: {
+      de: 'Umfassende Repräsentanz des Unternehmens in Europa auf der Messe in Gent',
+      ua: 'Комплексне представлення підприємства в Європі',
+      en: 'Comprehensive business representation in Europe at Ghent exhibition',
+    },
+    priceDisplay: {
+      de: '2.040 €',
+      ua: '2 040 €',
+      en: '€2,040',
+    },
+    priceNote: {
+      de: 'Gesamtwert der Leistungen nach Standard-Preisliste — 2.040 €. Der endgültige Paketpreis wird bei der Bestellung vereinbart.',
+      ua: 'Загальна вартість послуг за стандартним прайс-листом — 2 040 €. Остаточна вартість пакета погоджується під час оформлення замовлення.',
+      en: 'Total service value by standard price list — €2,040. Final package rate agreed upon ordering.',
+    },
+    totalStandardPriceEur: 2040,
+    features: {
+      de: [
+        'Videopräsentation des Unternehmens auf dem Großmonitor des Pavillons',
+        'Präsentation von 200 Exemplaren gedruckter Werbematerialien',
+        'Verteilung von bis zu 200 Werbeflyern',
+        'Platzierung von 400 Visitenkarten an zentralen Ständen',
+        'Werbebanner im Format 1 × 2 m',
+        'Gezielte Informationssammlung & Kontaktrecherche zu potenziellen Partnern auf Anfrage',
+        'Eintrag des Unternehmens im Online-Katalog für 12 Monate',
+      ],
+      ua: [
+        'Відеопрезентація підприємства на великому моніторі виставкового павільйону',
+        'Представлення 200 примірників друкованої рекламної продукції',
+        'Розповсюдження до 200 рекламних флаєрів',
+        'Розміщення 400 візитних карток',
+        'Рекламний банер розміром 1 × 2 м',
+        'Збір інформації та контактів потенційних партнерів за запитом',
+        'Розміщення інформації про підприємство в онлайн-каталозі строком на 12 місяців',
+      ],
+      en: [
+        'Company video presentation on the large screen of the exhibition pavilion',
+        'Presentation of 200 copies of printed advertising materials',
+        'Distribution of up to 200 promotional flyers',
+        'Placement of 400 business cards at central counters',
+        'Advertising banner sized 1 × 2 m',
+        'Collection of information and contacts of prospective partners upon request',
+        'Company profile listing in the online directory for 12 months',
+      ],
+    },
+    ctaText: {
+      de: 'Business-Paket anfragen',
+      ua: 'Замовити Бізнес-пакет',
+      en: 'Inquire Business Package',
+    },
+    isPopular: true,
+  },
+  {
     id: 'economy',
     name: {
       de: 'Economy-Paket',
-      uk: 'Економ пакет',
+      ua: 'Економ-пакет',
       en: 'Economy Package',
     },
     badge: {
-      de: 'Flexibler Einstieg',
-      uk: 'Гнучкий вибір',
-      en: 'Flexible Entry',
+      de: 'Individuelle Auswahl',
+      ua: 'Гнучкий вибір за бюджетом',
+      en: 'Budget Flexibility',
     },
     subtitle: {
-      de: 'Flexible Repräsentanz Ihres Unternehmens auf dem europäischen Markt',
-      uk: 'Гнучке представлення вашого підприємства в Європі',
-      en: 'Flexible presentation of your enterprise on the European market',
+      de: 'Sie wählen Leistungen entsprechend Ihrem individuellen Budget',
+      ua: 'Ви обираєте послуги відповідно до свого бюджету',
+      en: 'You select services according to your individual budget',
     },
     priceDisplay: {
       de: 'ab 1.000 €',
-      uk: 'від 1 000 €',
+      ua: 'від 1 000 €',
       en: 'from €1,000',
     },
     priceNote: {
-      de: 'Mindestbestellwert 1.000 €. Zusätzliche Leistungen mit +30% Aufschlag wählbar.',
-      uk: 'Мінімальна вартість замовлення становить 1 000 €. Додаткові послуги розраховуються з націнкою +30%.',
-      en: 'Minimum order value €1,000. Additional services available with a +30% surcharge.',
+      de: 'Mindestbestellwert — 1.000 €. Zusätzliche Leistungen außerhalb des vereinbarten Paketumfangs werden mit 30% Aufschlag berechnet.',
+      ua: 'Мінімальна вартість замовлення — 1 000 €. Ви самостійно обираєте потрібні послуги та їхній обсяг. На додаткові послуги поза погодженим складом пакета нараховується 30% до стандартної ціни.',
+      en: 'Minimum order value — €1,000. You independently choose required services and volume. Additional services outside agreed package subject to +30% surcharge.',
     },
     features: {
       de: [
-        'Freie Auswahl aus allen verfügbaren Einzelleistungen',
-        'Zusammenstellung nach Ihren individuellen Zielen & Budget',
-        'Präsentation durch geschulte mehrsprachige Vertreter',
-        'Distanzbeobachtung über Livestream & Messe-Chat (soweit verfügbar)',
-        'Möglichkeit zur modularen Erweiterung (+30% Aufschlag)',
+        'Mindestbestellwert ab 1.000 €',
+        'Sie wählen eigenständig die gewünschten Leistungen und deren Umfang',
+        'Keine Pflicht zur Buchung des vollständigen Business-Pakets',
+        'Aufschlag von 30% auf zusätzliche Einzelleistungen außerhalb des Pakets',
+        'Gezielte Präsentation der für Sie wichtigsten Prioritäten',
       ],
-      uk: [
-        'Вільний вибір серед усіх доступних послуг компанії',
-        'Формування складу відповідно до ваших цілей і бюджету',
-        'Професійне представлення інтересів без виїзду до Бельгії',
-        'Дистанційне спостереження за виставкою через стрім і чат',
-        'Можливість замовлення додаткових послуг із націнкою 30%',
+      ua: [
+        'Мінімальна вартість замовлення — від 1 000 €',
+        'Ви самостійно обираєте потрібні послуги та їхній обсяг',
+        'Не потрібно замовляти весь перелік послуг Бізнес-пакета',
+        'На додаткові послуги поза погодженим складом нараховується 30% до стандартної ціни',
+        'Фокус виключно на пріоритетних для вашого підприємства напрямках',
       ],
       en: [
-        'Custom selection among all available single services',
-        'Tailored combination aligned with your targets and budget',
-        'Professional representation without travel to Belgium',
-        'Remote monitoring via exhibition livestream and chat (if available)',
-        'Option to add further single services with +30% surcharge',
+        'Minimum order value — from €1,000',
+        'You choose the needed services and their scope yourself',
+        'No obligation to order the full Business Package list',
+        '30% surcharge applied to additional single services beyond the agreed package',
+        'Targeted presentation focusing strictly on your core commercial priorities',
       ],
     },
     ctaText: {
       de: 'Economy-Paket anfragen',
-      uk: 'Замовити Економ пакет',
+      ua: 'Замовити Економ-пакет',
       en: 'Inquire Economy Package',
     },
     isPopular: false,
   },
-  {
-    id: 'platinum',
-    name: {
-      de: 'Business / Platin-Paket',
-      uk: 'Бізнес / Платиновий пакет',
-      en: 'Business / Platinum Package',
-    },
-    badge: {
-      de: 'Komplett-Präsenz',
-      uk: 'Максимальне охоплення',
-      en: 'Complete Presence',
-    },
-    subtitle: {
-      de: 'Umfassende Repräsentanz mit allen Werbe- und Informationsformaten',
-      uk: 'Комплексне представлення вашого підприємства в Європі',
-      en: 'Comprehensive business representation covering all promotional formats',
-    },
-    priceDisplay: {
-      de: 'Individuelle Vereinbarung',
-      uk: 'Узгоджується під час замовлення',
-      en: 'Agreed on consultation',
-    },
-    priceNote: {
-      de: 'Kombinierter Einzelwert aller Leistungen: 2.040 €. Sonderkonditionen im Paket.',
-      uk: 'Загальна вартість усіх послуг окремо: 2 040 €. Спеціальна пакетна вартість розраховується індивідуально.',
-      en: 'Combined value of single services: €2,040. Special bundled rate agreed during booking.',
-    },
-    referenceSumEur: 2040,
-    features: {
-      de: [
-        'Videopräsentation auf Großmonitor (5 Min, 08:00–20:00 alle 20 Min)',
-        'Verteilung von 200 gedruckten Werbematerialien (Broschüren/Kataloge)',
-        'Auslage von bis zu 200 Werbeflyern (A4 gefalzt)',
-        'Platzierung von 400 Visitenkarten an zentralen Infotheken',
-        'Werbebanner 1 × 2 m im Ausstellungspavillon',
-        'Gezielte Informationssammlung & Partnersuche nach Ihrem Profil',
-        '12 Monate Firmeneintrag im europäischen Online-Katalog',
-      ],
-      uk: [
-        'Відеопрезентація на великому моніторі (до 5 хв, кожні 20 хв з 08:00 до 20:00)',
-        'Представлення друкованої продукції — комплект із 200 примірників',
-        'Розповсюдження рекламних флаєрів — до 200 примірників',
-        'Розміщення 400 візитних карток на центральних стійках',
-        'Рекламний банер розміром 1 × 2 м у виставковому просторі',
-        'Збір інформації та контактів потенційних партнерів за вашим запитом',
-        'Річне розміщення інформації в онлайн-каталозі (12 місяців)',
-      ],
-      en: [
-        'Video presentation on large screen (5 min, every 20 min from 08:00 to 20:00)',
-        'Distribution of 200 printed promotional items (catalogues/brochures)',
-        'Distribution of up to 200 folded A4 promotional flyers',
-        'Placement of 400 business cards at central information points',
-        'Vertical advertising banner 1 × 2 m in the pavilion',
-        'Targeted market research and potential partner contact gathering',
-        '12 months featured listing in the European online directory',
-      ],
-    },
-    ctaText: {
-      de: 'Platin-Paket anfragen',
-      uk: 'Замовити Платиновий пакет',
-      en: 'Inquire Platinum Package',
-    },
-    isPopular: true,
-  },
 ];
+
+export const packageDifference = {
+  de: 'Hauptunterschied: Das Business-Paket bietet eine umfassende Komplettrepräsentanz Ihres Unternehmens, während das Economy-Paket Ihnen erlaubt, gezielt die für Sie wichtigsten Leistungen zu wählen.',
+  ua: 'Головна відмінність: Бізнес-пакет передбачає комплексне представлення підприємства, а Економ-пакет дозволяє обрати лише найважливіші послуги.',
+  en: 'Key difference: The Business Package delivers comprehensive full-scale representation of your enterprise, while the Economy Package allows you to select only the most vital services within your budget.',
+};
 
 export const packageTerms = {
   de: [
-    'Alle Preise verstehen sich in Euro (€). Die MwSt.-Regelung richtet sich nach dem rechtlichen Status des Leistungserbringers.',
-    'Die Erstellung von Videoclips, Bannern und Drucksorten ist nicht im Repräsentationspreis enthalten. Materialien werden vom Auftraggeber auf Englisch mit ukrainischer Zweitsprache bereitgestellt.',
-    'Individuelle Wünsche und Sonderleistungen werden gesondert vereinbart.',
+    'Alle Preise verstehen sich in Euro (€).',
+    'Fragen der Mehrwertsteuer richten sich nach dem Status des Ausführenden und den anwendbaren Steuervorschriften.',
+    'Die Erstellung von Videoclips, Bannern und Druckmaterialien wird separat vergütet, sofern nicht anders vereinbart. Materialien werden vom Auftraggeber auf Englisch mit ukrainischer Zweitsprache bereitgestellt.',
+    'Die Distanzbeobachtung der Messe per Livestream und interaktivem Chat ist bei technischer Verfügbarkeit möglich.',
+    'Der endgültige Leistungsumfang, das Arbeitsvolumen und die Kosten werden vor der Bestellung verbindlich abgestimmt.',
   ],
-  uk: [
-    'Усі ціни вказані в євро. Питання ПДВ визначається відповідно до юридичного статусу виконавця та застосовних податкових правил.',
-    'Виготовлення відеороликів, банерів і друкованої продукції не входить у вартість представлення. Матеріали готує замовник англійською мовою з дублюванням українською.',
-    'Індивідуальні послуги та додаткові побажання розглядаються окремо під час узгодження замовлення.',
+  ua: [
+    'Усі ціни вказані в євро.',
+    'Питання ПДВ визначається відповідно до статусу виконавця та застосовних податкових правил.',
+    'Виготовлення відеороликів, банерів і друкованої продукції оплачується окремо, якщо інше не погоджено сторонами. Матеріали готує замовник англійською мовою з дублюванням українською.',
+    'Дистанційне спостереження за виставкою через трансляцію та інтерактивний чат можливе за умови їхньої технічної доступності.',
+    'Остаточний склад послуг, обсяг робіт і вартість погоджуються до оформлення замовлення.',
   ],
   en: [
-    'All prices are in Euros (€). Applicable VAT terms depend on the legal status of the service provider.',
-    'Production of videos, banners and printed materials is not included in the representation fee. Promotional materials are provided by the client in English with Ukrainian secondary text.',
-    'Custom requests and individual services are discussed and agreed separately upon order confirmation.',
+    'All prices are quoted in Euros (€).',
+    'VAT application is determined according to the legal status of the service provider and applicable tax regulations.',
+    'Production of video clips, banners and printed materials is paid separately unless otherwise agreed. Materials are prepared by the client in English with Ukrainian duplication.',
+    'Remote exhibition monitoring via livestream and interactive chat is subject to technical availability.',
+    'Final service composition, scope of work and total price are aligned before placing the order.',
   ],
+};
+
+export const packageSignOff = {
+  slogan: {
+    de: '«NEUE WEGE» — wir vertreten ukrainische Agrarunternehmen auf dem europäischen Markt.',
+    ua: '«НОВА ДОРОГА» — представляємо український аграрний бізнес на європейському ринку.',
+    en: '“NEUE WEGE” — representing Ukrainian agribusiness on the European market.',
+  },
+  support: {
+    de: 'Mit Unterstützung der Hilfsorganisation «Hoffnung & Würde».',
+    ua: 'За підтримки благодійної організації «Надія та Гідність».',
+    en: 'Supported by the charitable organisation “Hoffnung & Würde”.',
+  },
 };

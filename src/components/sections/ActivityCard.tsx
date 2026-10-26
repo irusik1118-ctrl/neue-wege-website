@@ -53,7 +53,7 @@ export function ActivityCard({ activity, locale }: ActivityCardProps) {
       </div>
 
       <div className="mt-6 pt-4 border-t border-brand-border/40 flex items-center justify-between text-xs font-semibold text-brand-purple group-hover:text-brand-purple-deep">
-        <span>{locale === 'uk' ? 'ТОВ «НОВА ДОРОГА»' : 'Neue Wege GmbH'}</span>
+        <span>{locale === 'ua' ? 'ТОВ «НОВА ДОРОГА»' : 'Neue Wege GmbH'}</span>
         <span className="w-8 h-0.5 bg-brand-gold group-hover:w-12 transition-all duration-300" />
       </div>
     </div>

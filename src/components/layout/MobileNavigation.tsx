@@ -1,13 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import {
+  Menu,
+  X,
+  Phone,
+  MessageCircle,
+  Home,
+  Building2,
+  Briefcase,
+  Calendar,
+  Handshake,
+  FileText,
+  Mail,
+  ArrowRight,
+} from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { Dictionary } from '@/i18n/types';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { contactsData } from '@/data/contacts';
+
+const emptySubscribe = () => () => {};
 
 interface MobileNavigationProps {
   locale: Locale;
@@ -16,90 +32,203 @@ interface MobileNavigationProps {
 
 export function MobileNavigation({ locale, dict }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const isMounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+  const pathname = usePathname();
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    }
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
 
   const navLinks = [
-    { href: `/${locale}`, label: dict.nav.home },
-    { href: `/${locale}/about`, label: dict.nav.about },
-    { href: `/${locale}/services`, label: dict.nav.services },
-    { href: `/${locale}/events`, label: dict.nav.events },
-    { href: `/${locale}/partners`, label: dict.nav.partners },
-    { href: `/${locale}/articles`, label: dict.nav.articles },
-    { href: `/${locale}/contact`, label: dict.nav.contact },
+    { href: `/${locale}`, label: dict.nav.home, icon: Home },
+    { href: `/${locale}/about`, label: dict.nav.about, icon: Building2 },
+    { href: `/${locale}/events`, label: dict.nav.events, icon: Calendar },
+    { href: `/${locale}/partners`, label: dict.nav.partners, icon: Handshake },
+    { href: `/${locale}/services`, label: dict.nav.services, icon: Briefcase },
+    { href: `/${locale}/articles`, label: dict.nav.articles, icon: FileText },
+    { href: `/${locale}/contact`, label: dict.nav.contact, icon: Mail },
   ];
 
   return (
     <div className="lg:hidden">
+      {/* Burger Button Trigger */}
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        className="p-2 rounded-lg text-brand-ink hover:text-brand-purple hover:bg-brand-surface focus:outline-hidden focus:ring-2 focus:ring-brand-purple"
+        onClick={() => setIsOpen(true)}
+        aria-label="Open navigation menu"
+        aria-expanded={isOpen}
+        className="flex items-center justify-center w-10 h-10 rounded-xl bg-white hover:bg-brand-surface text-brand-navy border border-brand-border hover:border-brand-gold shadow-2xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"
       >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        <Menu className="w-5 h-5 text-brand-navy" />
       </button>
 
-      {isOpen && (
-        <div className="fixed inset-0 top-20 z-50 bg-white/95 backdrop-blur-md border-b border-brand-border flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in duration-200">
-          <div className="space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-brand-border">
-              <span className="text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                Мова / Sprache / Language
-              </span>
-              <LanguageSwitcher currentLocale={locale} />
+      {/* Render Drawer into document.body via Portal so it is not trapped inside the header's backdrop-filter containing block */}
+      {isMounted && isOpen && createPortal(
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          {/* Backdrop overlay */}
+          <div
+            role="presentation"
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 bg-brand-navy/60 backdrop-blur-xs transition-opacity duration-200"
+          />
+
+          {/* Slide-over Navigation Drawer */}
+          <aside
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation"
+            className="fixed inset-y-0 right-0 w-full max-w-[320px] sm:max-w-sm h-full h-[100dvh] bg-white shadow-2xl flex flex-col justify-between border-l border-brand-border z-10 animate-in slide-in-from-right duration-250 ease-out"
+          >
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-brand-border bg-gradient-to-r from-brand-surface to-white shrink-0">
+              <Link
+                href={`/${locale}`}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2.5"
+              >
+                <div className="w-9 h-9 rounded-full border border-brand-gold/50 p-0.5 bg-white shrink-0">
+                  <Image
+                    src="/brand/logo-neue-wege.jpg"
+                    alt="Neue Wege GmbH"
+                    width={32}
+                    height={32}
+                    className="rounded-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-black text-brand-navy leading-tight">
+                    Neue Wege <span className="text-brand-gold">GmbH</span>
+                  </span>
+                  <span className="text-[10px] font-semibold text-brand-muted">
+                    {locale === 'ua' ? 'ТОВ «НОВА ДОРОГА»' : 'Austrian Agribusiness'}
+                  </span>
+                </div>
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close navigation menu"
+                className="flex items-center justify-center w-9 h-9 rounded-xl text-brand-muted hover:text-brand-navy hover:bg-brand-surface border border-transparent hover:border-brand-border transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            <nav className="flex flex-col space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="px-3 py-2 text-base font-medium text-brand-ink hover:text-brand-purple hover:bg-brand-surface rounded-lg transition-colors"
+            {/* Nav Links Body */}
+            <div className="flex-1 min-h-0 overflow-y-auto px-4 py-4 space-y-1">
+              <p className="px-3 pb-2 text-[10px] font-extrabold uppercase tracking-wider text-brand-muted">
+                {locale === 'de' ? 'Navigation' : locale === 'ua' ? 'Навігація' : 'Navigation'}
+              </p>
+
+              {navLinks.map((link) => {
+                const Icon = link.icon;
+                const isActive =
+                  link.href === `/${locale}`
+                    ? pathname === `/${locale}`
+                    : pathname?.startsWith(link.href);
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                      isActive
+                        ? 'bg-brand-purple text-white shadow-xs'
+                        : 'text-brand-navy hover:bg-brand-surface hover:text-brand-purple'
+                    }`}
+                  >
+                    <Icon
+                      className={`w-4 h-4 shrink-0 ${
+                        isActive ? 'text-brand-gold' : 'text-brand-muted'
+                      }`}
+                    />
+                    <span className="flex-1">{link.label}</span>
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Drawer Footer Actions & Contacts */}
+            <div className="p-4 sm:p-5 border-t border-brand-border bg-brand-surface/50 space-y-3 shrink-0">
+              {/* Primary CTA */}
+              <Link
+                href={`/${locale}/contact`}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-brand-purple hover:bg-brand-purple-deep text-white font-bold text-xs rounded-xl shadow-xs transition-colors"
+              >
+                <span>{dict.common.contactUs}</span>
+                <ArrowRight className="w-4 h-4 text-brand-gold" />
+              </Link>
+
+              {/* Quick Contact shortcuts */}
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href={`tel:${contactsData.persons[0].phone}`}
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 bg-white hover:bg-brand-surface text-brand-navy text-[11px] font-bold rounded-lg border border-brand-border shadow-2xs transition-colors"
                 >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          <div className="pt-6 mt-6 border-t border-brand-border space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-surface shrink-0">
-                <Image
-                  src="/brand/logo-neue-wege.jpg"
-                  alt="Neue Wege GmbH Logo"
-                  width={36}
-                  height={36}
-                  className="rounded-full object-cover"
-                />
+                  <Phone className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                  <span className="truncate">UA Office</span>
+                </a>
+                <a
+                  href={contactsData.messenger.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 bg-white hover:bg-brand-surface text-brand-purple text-[11px] font-bold rounded-lg border border-brand-border shadow-2xs transition-colors"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                  <span className="truncate">{dict.common.messengers}</span>
+                </a>
               </div>
-              <div>
-                <p className="text-xs font-bold text-brand-purple">Neue Wege GmbH</p>
-                <p className="text-[11px] text-brand-muted">{contactsData.address.display[locale]}</p>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2 gap-2">
-              <a
-                href={`tel:${contactsData.persons[0].phone}`}
-                className="flex items-center justify-center gap-2 py-2.5 px-3 bg-brand-surface hover:bg-brand-border/40 text-brand-ink text-xs font-semibold rounded-lg border border-brand-border"
-              >
-                <Phone className="w-3.5 h-3.5 text-brand-purple" />
-                <span>{contactsData.persons[0].country[locale]}</span>
-              </a>
-              <a
-                href={contactsData.messenger.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2.5 px-3 bg-brand-purple text-white text-xs font-semibold rounded-lg shadow-xs hover:bg-brand-purple-deep"
-              >
-                <MessageCircle className="w-3.5 h-3.5 text-brand-gold-light" />
-                <span>{dict.common.messengers}</span>
-              </a>
+              <div className="pt-1 text-center">
+                <a
+                  href={`mailto:${contactsData.email}`}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-brand-purple hover:underline"
+                >
+                  <Mail className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                  <span>{contactsData.email}</span>
+                </a>
+              </div>
+
+              <p className="text-[10px] text-center text-brand-muted pt-0.5">
+                {contactsData.address.display[locale]}
+              </p>
             </div>
-          </div>
-        </div>
+          </aside>
+        </div>,
+        document.body
       )}
     </div>
   );
 }
+

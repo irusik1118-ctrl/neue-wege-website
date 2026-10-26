@@ -1,7 +1,7 @@
 export interface ExhibitionInfo {
   dates: {
     de: string;
-    uk: string;
+    ua:string;
     en: string;
   };
   startDate: string;
@@ -12,7 +12,7 @@ export interface ExhibitionInfo {
     venue: string;
     display: {
       de: string;
-      uk: string;
+      ua:string;
       en: string;
     };
   };
@@ -22,12 +22,12 @@ export interface ExhibitionInfo {
   };
   sectors: {
     de: string[];
-    uk: string[];
+    ua:string[];
     en: string[];
   };
   benefits: {
     de: { title: string; desc: string }[];
-    uk: { title: string; desc: string }[];
+    ua:{ title: string; desc: string }[];
     en: { title: string; desc: string }[];
   };
 }
@@ -37,7 +37,7 @@ export const exhibitionData: ExhibitionInfo = {
   endDate: '2027-01-17',
   dates: {
     de: '14. – 17. Januar 2027',
-    uk: '14–17 січня 2027 року',
+    ua:'14–17 січня 2027 року',
     en: 'January 14–17, 2027',
   },
   location: {
@@ -46,7 +46,7 @@ export const exhibitionData: ExhibitionInfo = {
     venue: 'Flanders Expo, Gent',
     display: {
       de: 'Gent, Belgien (Flanders Expo)',
-      uk: 'м. Гент, Бельгія (Flanders Expo)',
+      ua:'м. Гент, Бельгія (Flanders Expo)',
       en: 'Ghent, Belgium (Flanders Expo)',
     },
   },
@@ -62,7 +62,7 @@ export const exhibitionData: ExhibitionInfo = {
       'Pflanzenschutz: Pflanzenernährung, Schädlingsbekämpfung und biologische Lösungen',
       'Veterinärmedizin: Pharmazeutika, Tiergesundheit und Biosicherheit',
     ],
-    uk: [
+    ua:[
       'Тваринництво та селекція: нові породи, племінна справа, розведення',
       'Птахівництво та тваринництво: свинарство, кролівництво та годівля',
       'Сільськогосподарська техніка та механізація: сучасне обладнання, обробіток ґрунту',
@@ -100,7 +100,7 @@ export const exhibitionData: ExhibitionInfo = {
         desc: 'Nach Messeende erhalten Sie eine vollständige Auswertung aller geführten Gespräche und geknüpften Kontakte.',
       },
     ],
-    uk: [
+    ua:[
       {
         title: 'Вам не потрібно їхати особисто',
         desc: 'Економія коштів на поїздку, проживання та логістику. Ваше господарство залишається під вашим безперервним контролем.',

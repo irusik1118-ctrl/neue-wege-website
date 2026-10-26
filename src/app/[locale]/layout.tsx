@@ -1,5 +1,4 @@
-import { notFound } from 'next/navigation';
-import { locales, Locale } from '@/i18n/config';
+import { locales, Locale, defaultLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -16,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const typedLocale = (locales.includes(locale as Locale) ? locale : 'de') as Locale;
+  const typedLocale = (locales.includes(locale as Locale) ? locale : defaultLocale) as Locale;
   const dict = getDictionary(typedLocale);
 
   return {
@@ -26,7 +25,7 @@ export async function generateMetadata({
       canonical: `/${typedLocale}`,
       languages: {
         de: '/de',
-        uk: '/uk',
+        ua: '/ua',
         en: '/en',
       },
     },
@@ -41,12 +40,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  if (!locales.includes(locale as Locale)) {
-    notFound();
-  }
-
-  const typedLocale = locale as Locale;
+  const typedLocale = (locales.includes(locale as Locale) ? locale : defaultLocale) as Locale;
   const dict = getDictionary(typedLocale);
 
   return (

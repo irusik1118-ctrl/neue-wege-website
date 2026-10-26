@@ -59,7 +59,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-brand-border p-8 shadow-sm space-y-5">
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-brand-border p-5 sm:p-8 shadow-sm space-y-5">
       <div>
         <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider mb-2">
           {dict.contact.nameLabel} *

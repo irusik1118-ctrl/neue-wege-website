@@ -1,11 +1,12 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Target, Award, Globe, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { Locale } from '@/i18n/config';
-import { getDictionary } from '@/i18n/get-dictionary';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { activitiesData } from '@/data/activities';
-import { contactsData } from '@/data/contacts';
+import Link from "next/link";
+import Image from "next/image";
+import { Target, Award, Globe, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Locale, locales, defaultLocale } from "@/i18n/config";
+import { notFound } from "next/navigation";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { activitiesData } from "@/data/activities";
+import { contactsData } from "@/data/contacts";
 
 export default async function AboutPage({
   params,
@@ -13,6 +14,9 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!locales.includes(locale as Locale)) {
+    notFound();
+  }
   const typedLocale = locale as Locale;
   const dict = getDictionary(typedLocale);
 
@@ -41,7 +45,10 @@ export default async function AboutPage({
           <div className="lg:col-span-7 space-y-8">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-brand-purple bg-brand-surface px-3 py-1 rounded-full border border-brand-border">
-                {typedLocale === 'uk' ? contactsData.legal.companyNameUa : contactsData.legal.companyNameAt} • {contactsData.address.display[typedLocale]}
+                {typedLocale === "ua"
+                  ? contactsData.legal.companyNameUa
+                  : contactsData.legal.companyNameAt}{" "}
+                • {contactsData.address.display[typedLocale]}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mt-3 leading-snug">
                 {dict.about.companyIntro}
@@ -100,8 +107,12 @@ export default async function AboutPage({
               </div>
 
               <div>
-                <h4 className="text-lg font-bold text-brand-navy">{contactsData.legal.companyNameAt}</h4>
-                <p className="text-xs text-brand-muted mt-1">{contactsData.address.display[typedLocale]}</p>
+                <h4 className="text-lg font-bold text-brand-navy">
+                  {contactsData.legal.companyNameAt}
+                </h4>
+                <p className="text-xs text-brand-muted mt-1">
+                  {contactsData.address.display[typedLocale]}
+                </p>
                 <p className="text-xs text-brand-purple font-bold mt-2">
                   «{contactsData.legal.slogan[typedLocale]}»
                 </p>
@@ -158,8 +169,11 @@ export default async function AboutPage({
 
               <div className="mt-6 pt-6 border-t border-brand-border/60">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {act.items[typedLocale].map((it, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-brand-ink/80 bg-brand-surface p-3 rounded-xl border border-brand-border/40">
+                  {(act.items[typedLocale] || act.items[defaultLocale] || []).map((it, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-2 text-xs text-brand-ink/80 bg-brand-surface p-3 rounded-xl border border-brand-border/40"
+                    >
                       <CheckCircle2 className="w-3.5 h-3.5 text-brand-gold shrink-0 mt-0.5" />
                       <span>{it}</span>
                     </div>

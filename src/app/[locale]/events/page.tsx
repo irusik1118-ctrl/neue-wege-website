@@ -110,17 +110,18 @@ export default async function EventsPage({
           </div>
 
           <div className="lg:col-span-5 flex justify-center">
-            <div className="bg-white rounded-3xl p-6 border-2 border-brand-gold/60 shadow-xl space-y-4 max-w-sm w-full text-center">
-              <div className="w-24 h-24 rounded-full border-2 border-brand-gold mx-auto overflow-hidden p-1 bg-white">
+            <div className="bg-white rounded-3xl p-5 border-2 border-brand-gold/60 shadow-xl space-y-4 max-w-md w-full text-center">
+              <div className="relative aspect-[1024/682] w-full rounded-2xl overflow-hidden border border-brand-gold shadow-sm">
                 <Image
-                  src="/brand/logo-hoffnung-wurde.jpg"
-                  alt="Hoffnung & Würde Logo"
-                  width={96}
-                  height={96}
-                  className="w-full h-full object-cover rounded-full"
+                  src="/brand/exhibition-banner.jpg"
+                  alt="Agri Flanders Ghent 2027 Official Exhibitors - Neue Wege GmbH"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 400px"
+                  priority
                 />
               </div>
-              <h4 className="text-base font-bold text-brand-navy">
+              <h4 className="text-sm sm:text-base font-bold text-brand-navy">
                 {dict.events.supporterHeading}
               </h4>
               <p className="text-xs text-brand-muted">

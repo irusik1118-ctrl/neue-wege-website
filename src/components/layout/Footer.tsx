@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, MessageCircle, ShieldCheck, FileText } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, ShieldCheck, FileText, Mail } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { Dictionary } from '@/i18n/types';
 import { contactsData } from '@/data/contacts';
@@ -64,11 +64,6 @@ export function Footer({ locale, dict }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/services`} className="text-white/75 hover:text-brand-gold-light transition-colors">
-                  {dict.nav.services}
-                </Link>
-              </li>
-              <li>
                 <Link href={`/${locale}/events`} className="text-white/75 hover:text-brand-gold-light transition-colors">
                   {dict.nav.events}
                 </Link>
@@ -76,6 +71,11 @@ export function Footer({ locale, dict }: FooterProps) {
               <li>
                 <Link href={`/${locale}/partners`} className="text-white/75 hover:text-brand-gold-light transition-colors">
                   {dict.nav.partners}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/services`} className="text-white/75 hover:text-brand-gold-light transition-colors">
+                  {dict.nav.services}
                 </Link>
               </li>
               <li>
@@ -100,6 +100,18 @@ export function Footer({ locale, dict }: FooterProps) {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
                 <span className="text-white/80">{contactsData.address.display[locale]}</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Mail className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white/60 text-[11px]">Email:</p>
+                  <a
+                    href={`mailto:${contactsData.email}`}
+                    className="text-white font-semibold hover:text-brand-gold-light transition-colors"
+                  >
+                    {contactsData.email}
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />

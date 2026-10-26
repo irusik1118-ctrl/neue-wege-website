@@ -1,7 +1,7 @@
 export interface ContactPerson {
   id: string;
-  country: Record<'de' | 'uk' | 'en', string>;
-  name: Record<'de' | 'uk' | 'en', string>;
+  country: Record<'de' | 'ua' | 'en', string>;
+  name: Record<'de' | 'ua' | 'en', string>;
   phone: string;
   displayPhone: string;
   isConfirmed: boolean;
@@ -24,7 +24,7 @@ export const contactsData = {
     country: 'Österreich',
     display: {
       de: 'Wien, Österreich',
-      uk: 'м. Відень, Австрія',
+      ua:'м. Відень, Австрія',
       en: 'Vienna, Austria',
     },
     postalCode: '1010', // pending full street confirmation
@@ -34,12 +34,12 @@ export const contactsData = {
       id: 'ukraine',
       country: {
         de: 'Ukraine',
-        uk: 'Україна',
+        ua:'Україна',
         en: 'Ukraine',
       },
       name: {
         de: 'Oleg (Ukraine Repräsentant)',
-        uk: 'Олег (Представник в Україні)',
+        ua:'Олег (Представник в Україні)',
         en: 'Oleh (Ukraine Representative)',
       },
       phone: '+380938119524',
@@ -50,12 +50,12 @@ export const contactsData = {
       id: 'austria',
       country: {
         de: 'Österreich',
-        uk: 'Австрія',
+        ua:'Австрія',
         en: 'Austria',
       },
       name: {
         de: 'Michael (Österreich Leitung)',
-        uk: 'Михайло (Керівництво Австрія)',
+        ua:'Михайло (Керівництво Австрія)',
         en: 'Michael (Austria Management)',
       },
       phone: '+4366499605910',
@@ -73,20 +73,20 @@ export const contactsData = {
     viberLink: 'viber://chat?number=%2B4366499701588',
     telegramLink: 'https://t.me/+4366499701588',
   } as MessengerContact,
-  email: 'office@neuewege-gmbh.at', // pending final domain mail setup
+  email: 'neuewege.info@gmail.com',
   legal: {
     companyNameAt: 'Neue Wege GmbH',
     companyNameUa: 'ТОВ «НОВА ДОРОГА»',
     slogan: {
       de: 'Ihr Partner von der Gründung bis zum erfolgreichen Business',
-      uk: 'Ваш партнер від заснування до успішного бізнесу',
+      ua:'Ваш партнер від заснування до успішного бізнесу',
       en: 'Your partner from company inception to successful business',
     },
     sloganDe: 'Ihr Partner von der Gründung bis zum erfolgreichen Business',
     sloganUa: 'Ваш партнер від заснування до успішного бізнесу',
     tagline: {
       de: 'Neuer Weg zu Entwicklung, Qualität und Wohlstand',
-      uk: 'Новий шлях до розвитку, якості та добробуту',
+      ua:'Новий шлях до розвитку, якості та добробуту',
       en: 'New path to development, quality and prosperity',
     },
     taglineUa: 'Новий шлях до розвитку, якості та добробуту',
