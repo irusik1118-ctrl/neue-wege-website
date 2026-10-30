@@ -22,7 +22,7 @@ import { BusinessCardModal } from "@/components/sections/BusinessCardModal";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { activitiesData } from "@/data/activities";
 import { packagesData, packageDifference } from "@/data/packages";
-import { exhibitionData } from "@/data/exhibition";
+import { exhibitionData, granForumData } from "@/data/exhibition";
 import { partnersData } from "@/data/partners";
 import { articlesData } from "@/data/articles";
 import { contactsData } from "@/data/contacts";
@@ -216,9 +216,9 @@ export default async function HomePage({
       </section>
 
       {/* ============================================================ */}
-      {/* 4. EXHIBITIONS & EVENTS BLOCK (Agri Flanders Ghent 2027)      */}
+      {/* 4. EXHIBITIONS & EVENTS BLOCK (Agri Flanders & GRAN FORUM)    */}
       {/* ============================================================ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-purple-deep via-brand-purple to-brand-navy text-white p-6 sm:p-10 lg:p-14 border-2 border-brand-gold/60 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-5">
@@ -288,6 +288,83 @@ export default async function HomePage({
             </div>
           </div>
         </div>
+
+        {/* GRAN FORUM VIENNA 2026 EVENT CARD (Photo 29.2) */}
+        <div className="bg-white rounded-3xl border-2 border-brand-gold/60 p-6 sm:p-10 lg:p-12 shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-purple text-white text-xs font-black uppercase tracking-wider shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
+                <span>{granForumData.badge[typedLocale]}</span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy leading-tight">
+                {granForumData.heading[typedLocale]}
+              </h3>
+
+              <p className="text-sm sm:text-base text-brand-ink font-semibold leading-relaxed">
+                {granForumData.leadParagraph[typedLocale]}
+              </p>
+
+              <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
+                {granForumData.secondParagraph[typedLocale]}
+              </p>
+
+              <div className="pt-2 space-y-3">
+                <h4 className="text-sm sm:text-base font-black text-brand-purple uppercase tracking-wider">
+                  {granForumData.infoHeading[typedLocale]}
+                </h4>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-2xl bg-brand-surface border border-brand-border">
+                    <ShieldCheck className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-brand-navy">{granForumData.infoItems.name.label[typedLocale]} </span>
+                      <span className="font-black text-brand-purple">{granForumData.infoItems.name.value[typedLocale]}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-2xl bg-brand-surface border-2 border-brand-gold/60">
+                    <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-brand-navy">{granForumData.infoItems.status.label[typedLocale]} </span>
+                      <span className="font-black text-brand-purple">{granForumData.infoItems.status.value[typedLocale]}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-2xl bg-brand-surface border border-brand-border">
+                    <Calendar className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-brand-navy">{granForumData.infoItems.dates.label[typedLocale]} </span>
+                      <span className="font-semibold text-brand-ink">{granForumData.infoItems.dates.value[typedLocale]}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-2xl bg-brand-surface border border-brand-border">
+                    <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-brand-navy">{granForumData.infoItems.location.label[typedLocale]} </span>
+                      <span className="font-semibold text-brand-ink">{granForumData.infoItems.location.value[typedLocale]}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="w-full max-w-sm rounded-3xl overflow-hidden border-2 border-brand-gold shadow-xl bg-white p-2">
+                <Image
+                  src={granForumData.imageUrl}
+                  alt={granForumData.imageAlt[typedLocale]}
+                  width={682}
+                  height={1024}
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                  className="w-full h-auto object-contain rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ============================================================ */}
@@ -300,10 +377,31 @@ export default async function HomePage({
           subtitle={dict.home.servicesSubheading}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-          {packagesData.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} locale={typedLocale} />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {packagesData.map((pkg) => (
+              <PackageCard key={pkg.id} pkg={pkg} locale={typedLocale} />
+            ))}
+          </div>
+
+          <div className="lg:col-span-4 flex justify-center">
+            <div className="w-full max-w-sm lg:max-w-none rounded-3xl border-2 border-brand-gold/60 bg-white p-3 shadow-xl flex items-center justify-center">
+              <Image
+                src="/brand/services-agricultural-sector-29-3.jpg"
+                alt={
+                  typedLocale === "ua"
+                    ? "Neue Wege GmbH — Послуги в аграрному секторі (Agricultural Sector — We Work For Your Business)"
+                    : typedLocale === "de"
+                    ? "Neue Wege GmbH — Dienstleistungen im Agrarsektor (Agricultural Sector — We Work For Your Business)"
+                    : "Neue Wege GmbH — Services in the Agricultural Sector (We Work For Your Business)"
+                }
+                width={512}
+                height={1024}
+                sizes="(max-width: 1024px) 100vw, 384px"
+                className="w-full h-auto object-contain rounded-2xl"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Difference callout note */}
@@ -419,13 +517,14 @@ export default async function HomePage({
             >
               <div className="space-y-3">
                 {partner.logoUrl ? (
-                  <div className="w-14 h-14 rounded-full border border-brand-gold/40 p-0.5 bg-white mb-2 overflow-hidden">
+                  <div className="w-40 sm:w-44 rounded-2xl border border-brand-gold/50 p-1.5 bg-white mb-3 overflow-hidden shadow-xs">
                     <Image
                       src={partner.logoUrl}
                       alt={partner.name[typedLocale]}
-                      width={56}
-                      height={56}
-                      className="w-full h-full object-cover rounded-full"
+                      width={512}
+                      height={1024}
+                      sizes="(max-width: 640px) 160px, 176px"
+                      className="w-full h-auto object-contain rounded-xl"
                     />
                   </div>
                 ) : (

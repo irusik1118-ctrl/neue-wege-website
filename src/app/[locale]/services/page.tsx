@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Calendar, Info, ShieldCheck, Heart } from 'lucide-react';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
@@ -116,10 +117,31 @@ export default async function ServicesPage({
           subtitle={sectionTitles.packagesSubtitle[typedLocale]}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-          {packagesData.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} locale={typedLocale} />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {packagesData.map((pkg) => (
+              <PackageCard key={pkg.id} pkg={pkg} locale={typedLocale} />
+            ))}
+          </div>
+
+          <div className="lg:col-span-4 flex justify-center">
+            <div className="w-full max-w-sm lg:max-w-none rounded-3xl border-2 border-brand-gold/60 bg-white p-3 shadow-xl flex items-center justify-center">
+              <Image
+                src="/brand/services-agricultural-sector-29-3.jpg"
+                alt={
+                  typedLocale === 'ua'
+                    ? 'Neue Wege GmbH — Послуги в аграрному секторі (Agricultural Sector — We Work For Your Business)'
+                    : typedLocale === 'de'
+                    ? 'Neue Wege GmbH — Dienstleistungen im Agrarsektor (Agricultural Sector — We Work For Your Business)'
+                    : 'Neue Wege GmbH — Services in the Agricultural Sector (We Work For Your Business)'
+                }
+                width={512}
+                height={1024}
+                sizes="(max-width: 1024px) 100vw, 384px"
+                className="w-full h-auto object-contain rounded-2xl"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Highlighted Difference Callout */}

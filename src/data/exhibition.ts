@@ -146,3 +146,68 @@ export const exhibitionData: ExhibitionInfo = {
     ],
   },
 };
+
+export const granForumData = {
+  imageUrl: '/brand/gran-forum-vienna-29-2.jpg',
+  imageAlt: {
+    de: 'GRAN FORUM in Wien (6.–8. November 2026) – Neue Wege GmbH ist offizieller Teilnehmer',
+    ua: 'GRAN FORUM у Відні (6–8 листопада 2026 року) — Neue Wege GmbH вже є учасником форуму',
+    en: 'GRAN FORUM in Vienna (November 6–8, 2026) – Neue Wege GmbH is an official participant',
+  },
+  badge: {
+    de: 'Offizieller Teilnehmer • 6.–8. November 2026',
+    ua: 'Ми вже є учасниками • 6–8 листопада 2026',
+    en: 'Official Participant • November 6–8, 2026',
+  },
+  heading: {
+    de: 'Wir sind Teilnehmer des GRAN FORUM in Wien!',
+    ua: 'Ми — учасники GRAN FORUM у Відні!',
+    en: 'We Are Participants of GRAN FORUM in Vienna!',
+  },
+  leadParagraph: {
+    de: 'Wir sind bereits Teilnehmer des GRAN FORUM, das vom 6. bis 8. November 2026 in Wien, Österreich, stattfindet.',
+    ua: 'Ми вже є учасниками GRAN FORUM, який відбудеться у Відні, Австрія, з 6 по 8 листопада 2026 року.',
+    en: 'We are already participants of GRAN FORUM, which will take place in Vienna, Austria, from November 6 to 8, 2026.',
+  },
+  secondParagraph: {
+    de: 'Die Teilnahme am Forum bietet die Möglichkeit, unsere Tätigkeit vorzustellen, Erfahrungen auszutauschen, die internationale Zusammenarbeit auszubauen und neue Partnerschaften zu knüpfen.',
+    ua: 'Участь у форумі — це можливість представити нашу діяльність, обмінятися досвідом, розширити міжнародну співпрацю та налагодити нові партнерства.',
+    en: 'Participating in the forum is an opportunity to present our activities, exchange experience, expand international cooperation, and build new partnerships.',
+  },
+  infoHeading: {
+    de: 'Informationen zur Veranstaltung:',
+    ua: 'Інформація про захід:',
+    en: 'Event Information:',
+  },
+  infoItems: {
+    name: {
+      label: { de: 'Name:', ua: 'Назва:', en: 'Name:' },
+      value: { de: 'GRAN FORUM.', ua: 'GRAN FORUM.', en: 'GRAN FORUM.' },
+    },
+    status: {
+      label: { de: 'Status:', ua: 'Статус:', en: 'Status:' },
+      value: {
+        de: 'wir sind bereits Teilnehmer.',
+        ua: 'ми вже є учасниками.',
+        en: 'we are already participants.',
+      },
+    },
+    dates: {
+      label: { de: 'Termin:', ua: 'Дати:', en: 'Dates:' },
+      value: {
+        de: '6.–8. November 2026.',
+        ua: '6–8 листопада 2026 року.',
+        en: 'November 6–8, 2026.',
+      },
+    },
+    location: {
+      label: { de: 'Ort:', ua: 'Місце:', en: 'Location:' },
+      value: {
+        de: 'Wien, Österreich.',
+        ua: 'Відень, Австрія.',
+        en: 'Vienna, Austria.',
+      },
+    },
+  },
+};
+

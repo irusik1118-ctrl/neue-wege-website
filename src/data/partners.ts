@@ -42,7 +42,7 @@ export const partnersData: PartnerItem[] = [
       ua:'Австрійська благодійна організація (м. Відень), яка підтримує представлення інтересів українських аграрних підприємств на міжнародних виставках та майданчиках Європи.',
       en: 'Austrian organization based in Vienna supporting the representation and integration of Ukrainian agricultural enterprises in European markets.',
     },
-    logoUrl: '/brand/logo-hoffnung-wurde.jpg',
+    logoUrl: '/brand/partner-hoffnung-wurde-29-1.jpg',
     location: {
       de: 'Wien, Österreich',
       ua:'м. Відень, Австрія',
