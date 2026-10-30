@@ -82,13 +82,13 @@ export default async function PartnersPage({
               </div>
 
               {partner.logoUrl && (
-                <div className="w-44 sm:w-52 rounded-2xl border-2 border-brand-gold p-1.5 bg-white shrink-0 shadow-md overflow-hidden">
+                <div className="w-28 sm:w-36 rounded-2xl border-2 border-brand-gold p-1.5 bg-white shrink-0 shadow-md overflow-hidden">
                   <Image
                     src={partner.logoUrl}
                     alt={partner.name[typedLocale]}
                     width={512}
                     height={1024}
-                    sizes="(max-width: 640px) 176px, 208px"
+                    sizes="(max-width: 640px) 112px, 144px"
                     className="w-full h-auto object-contain rounded-xl"
                   />
                 </div>

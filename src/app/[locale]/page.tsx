@@ -515,33 +515,48 @@ export default async function HomePage({
               key={partner.id}
               className="bg-white rounded-2xl border border-brand-border p-6 shadow-xs hover:border-brand-gold hover:shadow-md transition-all flex flex-col justify-between"
             >
-              <div className="space-y-3">
-                {partner.logoUrl ? (
-                  <div className="w-40 sm:w-44 rounded-2xl border border-brand-gold/50 p-1.5 bg-white mb-3 overflow-hidden shadow-xs">
-                    <Image
-                      src={partner.logoUrl}
-                      alt={partner.name[typedLocale]}
-                      width={512}
-                      height={1024}
-                      sizes="(max-width: 640px) 160px, 176px"
-                      className="w-full h-auto object-contain rounded-xl"
-                    />
+              {partner.logoUrl ? (
+                <div className="space-y-3">
+                  <span className="inline-block text-[11px] font-semibold text-brand-purple bg-brand-surface px-2.5 py-0.5 rounded-full border border-brand-border">
+                    {partner.type[typedLocale]}
+                  </span>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-2 flex-1 min-w-0">
+                      <h3 className="text-base font-bold text-brand-navy leading-snug">
+                        {partner.name[typedLocale]}
+                      </h3>
+                      <p className="text-xs text-brand-muted leading-relaxed">
+                        {partner.description[typedLocale]}
+                      </p>
+                    </div>
+                    <div className="w-20 sm:w-24 rounded-xl border border-brand-gold/50 p-1 bg-white shrink-0 overflow-hidden shadow-xs">
+                      <Image
+                        src={partner.logoUrl}
+                        alt={partner.name[typedLocale]}
+                        width={512}
+                        height={1024}
+                        sizes="(max-width: 640px) 80px, 96px"
+                        className="w-full h-auto object-contain rounded-lg"
+                      />
+                    </div>
                   </div>
-                ) : (
+                </div>
+              ) : (
+                <div className="space-y-3">
                   <div className="w-12 h-12 rounded-xl bg-brand-surface border border-brand-border flex items-center justify-center text-brand-purple font-black text-sm mb-2">
                     B2B
                   </div>
-                )}
-                <span className="text-[11px] font-semibold text-brand-purple bg-brand-surface px-2.5 py-0.5 rounded-full border border-brand-border">
-                  {partner.type[typedLocale]}
-                </span>
-                <h3 className="text-base font-bold text-brand-navy leading-snug">
-                  {partner.name[typedLocale]}
-                </h3>
-                <p className="text-xs text-brand-muted leading-relaxed">
-                  {partner.description[typedLocale]}
-                </p>
-              </div>
+                  <span className="inline-block text-[11px] font-semibold text-brand-purple bg-brand-surface px-2.5 py-0.5 rounded-full border border-brand-border">
+                    {partner.type[typedLocale]}
+                  </span>
+                  <h3 className="text-base font-bold text-brand-navy leading-snug">
+                    {partner.name[typedLocale]}
+                  </h3>
+                  <p className="text-xs text-brand-muted leading-relaxed">
+                    {partner.description[typedLocale]}
+                  </p>
+                </div>
+              )}
 
               <div className="pt-4 mt-4 border-t border-brand-border/60 text-[11px] font-medium text-brand-muted flex items-center justify-between">
                 <span>{partner.location[typedLocale]}</span>
