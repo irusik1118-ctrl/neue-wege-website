@@ -56,7 +56,7 @@ export function BusinessCardModal({ locale }: BusinessCardModalProps) {
           >
             <div className="relative aspect-[1024/624] w-full">
               <Image
-                src="/brand/business-card.jpg"
+                src="/brand/business-card.webp"
                 alt="Neue Wege GmbH Business Card 001"
                 width={1024}
                 height={624}
@@ -178,7 +178,7 @@ export function BusinessCardModal({ locale }: BusinessCardModalProps) {
             {/* Modal image */}
             <div className="relative aspect-[1024/624] w-full my-3 sm:my-4 rounded-2xl overflow-hidden border border-brand-border shadow-inner">
               <Image
-                src="/brand/business-card.jpg"
+                src="/brand/business-card.webp"
                 alt="Neue Wege GmbH Business Card Full"
                 fill
                 className="object-contain"

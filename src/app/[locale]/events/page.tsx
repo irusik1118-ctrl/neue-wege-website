@@ -192,7 +192,7 @@ export default async function EventsPage({
             <div className="bg-white rounded-3xl p-5 border-2 border-brand-gold/60 shadow-xl space-y-4 max-w-md w-full text-center">
               <div className="relative aspect-[1024/576] w-full rounded-2xl overflow-hidden border border-brand-gold shadow-sm">
                 <Image
-                  src="/brand/agri-flanders-participants.jpg"
+                  src="/brand/agri-flanders-participants.webp"
                   alt="Agri Flanders Ghent 2027 Official Exhibitors - Neue Wege GmbH"
                   fill
                   className="object-cover"

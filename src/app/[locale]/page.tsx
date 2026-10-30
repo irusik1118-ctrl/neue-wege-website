@@ -159,7 +159,7 @@ export default async function HomePage({
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg overflow-hidden rounded-3xl border border-brand-gold/60 bg-white shadow-lg">
                 <Image
-                  src="/brand/hero-presentation.jpg"
+                  src="/brand/hero-presentation.webp"
                   alt="Neue Wege GmbH – Ihr Partner von der Gründung bis zum erfolgreichen Business"
                   width={1024}
                   height={682}
@@ -269,7 +269,7 @@ export default async function HomePage({
               <div className="relative w-full rounded-2xl overflow-hidden border-2 border-brand-gold shadow-2xl bg-white group">
                 <div className="relative aspect-[1024/682] w-full">
                   <Image
-                    src="/brand/exhibition-banner.jpg"
+                    src="/brand/exhibition-banner.webp"
                     alt="Agri Flanders Ghent 2027 Official Exhibitor - Neue Wege GmbH"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -387,7 +387,7 @@ export default async function HomePage({
           <div className="lg:col-span-4 flex justify-center">
             <div className="w-full max-w-sm lg:max-w-none rounded-3xl border-2 border-brand-gold/60 bg-white p-3 shadow-xl flex items-center justify-center">
               <Image
-                src="/brand/services-agricultural-sector-29-3.jpg"
+                src="/brand/services-agricultural-sector-29-3.webp"
                 alt={
                   typedLocale === "ua"
                     ? "Neue Wege GmbH — Послуги в аграрному секторі (Agricultural Sector — We Work For Your Business)"
@@ -434,7 +434,7 @@ export default async function HomePage({
               <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-2 border-brand-gold shadow-2xl bg-white p-2">
                 <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-brand-surface">
                   <Image
-                    src="/brand/consultant-navy.jpg"
+                    src="/brand/consultant-navy.webp"
                     alt="Neue Wege Client Support Specialist"
                     fill
                     className="object-cover object-top"

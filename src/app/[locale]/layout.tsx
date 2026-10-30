@@ -52,7 +52,7 @@ export default async function LocaleLayout({
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10" aria-hidden="true">
         <div className="relative h-14 sm:h-20 overflow-hidden rounded-2xl border border-brand-gold/50">
           <Image
-            src="/brand/wave-bottom.jpg"
+            src="/brand/wave-bottom.webp"
             alt=""
             fill
             sizes="(max-width: 1280px) 100vw, 1280px"

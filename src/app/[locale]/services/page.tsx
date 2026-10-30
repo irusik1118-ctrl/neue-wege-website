@@ -127,7 +127,7 @@ export default async function ServicesPage({
           <div className="lg:col-span-4 flex justify-center">
             <div className="w-full max-w-sm lg:max-w-none rounded-3xl border-2 border-brand-gold/60 bg-white p-3 shadow-xl flex items-center justify-center">
               <Image
-                src="/brand/services-agricultural-sector-29-3.jpg"
+                src="/brand/services-agricultural-sector-29-3.webp"
                 alt={
                   typedLocale === 'ua'
                     ? 'Neue Wege GmbH — Послуги в аграрному секторі (Agricultural Sector — We Work For Your Business)'

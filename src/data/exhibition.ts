@@ -148,7 +148,7 @@ export const exhibitionData: ExhibitionInfo = {
 };
 
 export const granForumData = {
-  imageUrl: '/brand/gran-forum-vienna-29-2.jpg',
+  imageUrl: '/brand/gran-forum-vienna-29-2.webp',
   imageAlt: {
     de: 'GRAN FORUM in Wien (6.–8. November 2026) – Neue Wege GmbH ist offizieller Teilnehmer',
     ua: 'GRAN FORUM у Відні (6–8 листопада 2026 року) — Neue Wege GmbH вже є учасником форуму',

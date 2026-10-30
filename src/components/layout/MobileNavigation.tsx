@@ -115,7 +115,7 @@ export function MobileNavigation({ locale, dict }: MobileNavigationProps) {
               >
                 <div className="w-9 h-9 rounded-full border border-brand-gold/50 p-0.5 bg-white shrink-0">
                   <Image
-                    src="/brand/logo-neue-wege.jpg"
+                    src="/brand/logo-neue-wege.webp"
                     alt="Neue Wege GmbH"
                     width={32}
                     height={32}

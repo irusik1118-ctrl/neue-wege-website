@@ -35,7 +35,7 @@ export function Header({ locale, dict }: HeaderProps) {
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-brand-gold/60 p-0.5 bg-white shadow-xs group-hover:border-brand-gold transition-colors shrink-0">
               <Image
-                src="/brand/logo-neue-wege.jpg"
+                src="/brand/logo-neue-wege.webp"
                 alt="Neue Wege GmbH"
                 width={48}
                 height={48}

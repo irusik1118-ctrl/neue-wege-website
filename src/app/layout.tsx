@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Neue Wege GmbH | ТОВ «НОВА ДОРОГА»',
   description: 'Internationale Agrarkooperation, Tierzucht, Pflanzenbau und Messevertretung in Gent 2027.',
   icons: {
-    icon: '/brand/logo-neue-wege.jpg',
+    icon: '/brand/logo-neue-wege.webp',
   },
 };
 

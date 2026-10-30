@@ -22,7 +22,7 @@ export function Footer({ locale, dict }: FooterProps) {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full border-2 border-brand-gold p-0.5 bg-white shrink-0">
                 <Image
-                  src="/brand/logo-neue-wege.jpg"
+                  src="/brand/logo-neue-wege.webp"
                   alt="Neue Wege GmbH"
                   width={46}
                   height={46}

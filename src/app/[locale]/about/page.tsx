@@ -95,7 +95,7 @@ export default async function AboutPage({
           <div className="lg:col-span-5 flex flex-col items-center gap-6">
             <figure className="w-full max-w-md overflow-hidden rounded-3xl border border-brand-gold/60 bg-white shadow-md">
               <Image
-                src="/brand/consultant-white.jpg"
+                src="/brand/consultant-white.webp"
                 alt="Neue Wege GmbH – Beraterin für Unternehmen"
                 width={1016}
                 height={645}
@@ -107,7 +107,7 @@ export default async function AboutPage({
               <div className="w-48 h-48 mx-auto rounded-full p-2 bg-gradient-to-tr from-brand-purple to-brand-gold shadow-md">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white p-2">
                   <Image
-                    src="/brand/logo-neue-wege.jpg"
+                    src="/brand/logo-neue-wege.webp"
                     alt="Neue Wege GmbH Logo"
                     width={180}
                     height={180}
